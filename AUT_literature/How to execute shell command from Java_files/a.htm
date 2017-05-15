@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" dir="ltr" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" dir="ltr" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions" dir="ltr" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<link href="a_data/lounge.css" rel="stylesheet"><script src="a_data/config.js" data-requiremodule="remote/config" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/common.js" data-requiremodule="common.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/lounge_002.js" data-requiremodule="lounge.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/ga.js" data-requiremodule="http://www.google-analytics.com/ga.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style id="css_1415453168675"></style><!-- base href="http://disqus.com/embed/comments/?base=default&disqus_version=aaa83386&f=mkyong&t_i=12827%20http%3A%2F%2Fwww.mkyong.com%2F%3Fp%3D12827&t_u=http%3A%2F%2Fwww.mkyong.com%2Fjava%2Fhow-to-execute-shell-command-from-java%2F&t_e=How%20to%20execute%20shell%20command%20from%20Java&t_d=%20How%20to%20execute%20shell%20command%20from%20Java&t_t=How%20to%20execute%20shell%20command%20from%20Java&s_o=default&l=" --><script charset="UTF-8" async="" src="a_data/event_002.js"></script><link href="a_data/discovery.css" rel="stylesheet"><script src="a_data/discovery.js" data-requiremodule="discovery/main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script charset="UTF-8" async="" src="a_data/event_003.js"></script><script charset="UTF-8" async="" src="a_data/event.js"></script></head>
+<body>
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1415232117/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1415232117/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/aaa83386"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"isReadOnly":null,"canModerate":false,"audienceSyncVerified":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"name":"Mkyong.com","language":"en","settings":{"canEnableSponsoredComments":false,"discoveryVariant":"default","allowAnonPost":true,"allowMedia":false,"moderatorText":"","typeface":"auto","disable3rdPartyTrackers":false,"promotedDiscoveryEnabled":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"hasCustomAvatar":false,"organicDiscoveryEnabled":true,"discoverySettingsUrl":"https://mkyong.disqus.com/admin/settings/ads/","discoveryThumbnailsEnabled":false,"colorScheme":"light","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":true},"url":"http://www.mkyong.com","guidelines":null,"favicon":{"permalink":"http://disqus.com/api/forums/favicons/mkyong.jpg","cache":"//a.disquscdn.com/uploads/forums/267/3082/favicon.png"},"avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/mkyong.jpg?size=32","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/mkyong.jpg?size=92","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"}},"pk":2673082,"founder":"20319410","raw_guidelines":null,"id":"mkyong","channel":null}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"total":19,"prev":null,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1414661789,"posts":[{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"username":"adam_outler","about":"Electronics Tech, Hacker, Developer","name":"Adam Outler","disable3rdPartyTrackers":false,"url":"http://casual-dev.com","joinedAt":"2013-05-28T07:41:46","rep":1.505842,"profileUrl":"http://disqus.com/adam_outler/","reputation":1.505842,"location":"The Internet","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"52933540","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/adam_outler.jpg","cache":"//a.disquscdn.com/uploads/users/5293/3540/avatar32.jpg?1369726908"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/adam_outler.jpg","cache":"//a.disquscdn.com/uploads/users/5293/3540/avatar92.jpg?1369726908","large":{"permalink":"http://disqus.com/api/users/avatars/adam_outler.jpg","cache":"//a.disquscdn.com/uploads/users/5293/3540/avatar92.jpg?1369726908"}}},"media":[],"points":4,"isFlagged":false,"dislikes":0,"raw_message":"The following code allows you to set a timer, restart the timer on keywords, and specify if you want it to be sent to your log or not.  This prevents several problems I've run into while programming on the command line.  \n\n\nThe method is complex, very complex, but it works well and avoids loops in favor of waiting for a synchronized notification whenever possible. It uses three threads.  The main thread launches the application and waits.  The reader thread processes whatever comes out of the application. The watchdog thread monitors for timeout and gets kicked by the reader thread to restart the timer whenever a keyword is detected.  \n\n\n\n\npublic String timeoutValueCheckingShellCommand(final String[] cmd, final String[] restartTimerKeywords, final int timeout,final boolean logLevel2) {\n\n        StringBuilder sb = new StringBuilder();\n\n        try {\n\n            ProcessBuilder p = new ProcessBuilder(cmd);\n\n            p=p.redirectErrorStream(true);\n\n            final Process process = p.start();\n\n            \n\n            \n\n            /*\n\n             TimeoutLogger is a place to hold a common object for use through\n\n             the various threads. It is used for logging of data, locking the\n\n             main thread on the processRunning object, timeout status and\n\n             monitoring of if the thread is alive or not. \n\n             */\n\n            class TimeoutLogger {\n\n                TimeoutLogger(boolean realtime,Process p){\n\n                    this.realtime=realtime;\n\n                    this.processRunning=p;\n\n                }\n\n                boolean realtime;\n\n                private final StringBuilder log = new StringBuilder();\n\n                AtomicBoolean timedOut = new AtomicBoolean(false);\n\n                AtomicBoolean isRunning = new AtomicBoolean(true);\n\n                final Object isRunningLock=new Object();\n\n                AtomicBoolean isLogging = new AtomicBoolean(true);\n\n                final Object isLoggingLock=new Object();\n\n                final Process processRunning;\n\n                final Timer watchDogTimer = new Timer(timeout, new ActionListener() {\n\n                    @Override\n\n                    public void actionPerformed(ActionEvent evt) {\n\n                        \n\n                        Log.level4Debug(\"Watchdog Triggered!  Command timed out.\");\n\n                        timedOut.set(true);\n\n                        synchronized (processRunning) {\n\n                            processRunning.notifyAll();\n\n                        }\n\n                    }\n\n                });\n\n                synchronized void log(char c){                \n\n                    log.append(c);\n\n                    if (realtime){\n\n                        Log.progress(Character.toString(c));\n\n                        String logstring=log.toString();\n\n                        for (String check:restartTimerKeywords){\n\n                            \n\n                            if (logstring.endsWith(check) && isRunning.get()){\n\n                                Log.level4Debug(\"Timer Reset on keyword \"+check);\n\n                                watchDogTimer.restart();\n\n                            }\n\n                        }\n\n                    }\n\n                }\n\n                synchronized String get(){\n\n                    return log.toString();\n\n                }\n\n                \n\n            }\n\n            \n\n            final TimeoutLogger tl = new TimeoutLogger(logLevel2,process);\n\n            /*if the watchDogtimer elapses, the timedOut boolean is set true\n\n             and the processRunning object is notified to release main process\n\n             wait.\n\n             */\n\n            /*notify the processRunning object when the thread is complete to\n\n             release the lock. \n\n             */\n\n            Thread processMonitor = new Thread(new Runnable() {\n\n                @Override\n\n                public void run() {\n\n                    try {\n\n                        tl.processRunning.waitFor();\n\n                        tl.watchDogTimer.stop();\n\n                        tl.isRunning.set(false);\n\n                        Log.level4Debug(\"Process Monitor done.\");\n\n                        synchronized (tl.processRunning) {\n\n                            tl.processRunning.notifyAll();\n\n                        }\n\n                    } catch (InterruptedException ex) {\n\n                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\n\n                    }\n\n                }\n\n            });\n\n            processMonitor.setName(\"Monitoring Process Exit Status from \" + cmd[0]);\n\n            /*\n\n            reads the output and restarts the timer if required.\n\n            */\n\n            Thread reader = new Thread(new Runnable() {\n\n                @Override\n\n                public void run() {\n\n                   BufferedInputStream STDOUT = new BufferedInputStream(tl.processRunning.getInputStream());\n\n                   Log.level4Debug(\"Instantiating reader process\");\n\n                   try {\n\n                       while(tl.isRunning.get()&& !tl.timedOut.get()){\n\n                               if(STDOUT.available()>0){\n\n                                   char read=(char)STDOUT.read();\n\n                                   tl.log(read);\n\n                               }\n\n                       }\n\n                       \n\n                       tl.watchDogTimer.stop();\n\n                       Thread.sleep(100);\n\n                       while(STDOUT.available()>0){\n\n                           char read=(char)STDOUT.read();\n\n                           tl.log(read);\n\n                       }\n\n                       tl.isLogging.set(false);\n\n                       synchronized (tl.processRunning){\n\n                           tl.processRunning.notifyAll();\n\n                       }\n\n                   } catch (IOException ex) {\n\n                       Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\n\n                   } catch (InterruptedException ex) {\n\n                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\n\n                    }\n\n                }\n\n            });\n\n            reader.setName(\"Reading and monitoring output from \" + cmd[0]);\n\n            //start the monitoring objects\n\n            reader.start();\n\n            tl.watchDogTimer.start();\n\n            processMonitor.start();\n\n            synchronized (tl.processRunning){\n\n                tl.processRunning.wait();\n\n            }\n\n            if (tl.isLogging.get()){\n\n                synchronized(tl.processRunning){\n\n                    tl.processRunning.wait();\n\n                }\n\n            }\n\n            String retvalue = tl.get();\n\n            //kill the process\n\n            if (tl.timedOut.get()) {\n\n                retvalue = \"Timeout!!! \" + retvalue;\n\n                process.destroy();\n\n            }\n\n            return retvalue;\n\n        } catch (IOException ex) {\n\n            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\n\n        } catch (InterruptedException ex) {\n\n            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\n\n        }\n\n        return \"\";\n\n    }","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-01-13T18:07:18","isEdited":false,"message":"\u003cp>The following code allows you to set a timer, restart the timer on keywords, and specify if you want it to be sent to your log or not.  This prevents several problems I've run into while programming on the command line.\u003c/p>\u003cp>The method is complex, very complex, but it works well and avoids loops in favor of waiting for a synchronized notification whenever possible. It uses three threads.  The main thread launches the application and waits.  The reader thread processes whatever comes out of the application. The watchdog thread monitors for timeout and gets kicked by the reader thread to restart the timer whenever a keyword is detected.\u003c/p>\u003cp>public String timeoutValueCheckingShellCommand(final String[] cmd, final String[] restartTimerKeywords, final int timeout,final boolean logLevel2) {\u003c/p>\u003cp>        StringBuilder sb = new StringBuilder();\u003c/p>\u003cp>        try {\u003c/p>\u003cp>            ProcessBuilder p = new ProcessBuilder(cmd);\u003c/p>\u003cp>            p=p.redirectErrorStream(true);\u003c/p>\u003cp>            final Process process = p.start();\u003c/p>\u003cp>            /*\u003c/p>\u003cp>             TimeoutLogger is a place to hold a common object for use through\u003c/p>\u003cp>             the various threads. It is used for logging of data, locking the\u003c/p>\u003cp>             main thread on the processRunning object, timeout status and\u003c/p>\u003cp>             monitoring of if the thread is alive or not.\u003c/p>\u003cp>             */\u003c/p>\u003cp>            class TimeoutLogger {\u003c/p>\u003cp>                TimeoutLogger(boolean realtime,Process p){\u003c/p>\u003cp>                    this.realtime=realtime;\u003c/p>\u003cp>                    this.processRunning=p;\u003c/p>\u003cp>                }\u003c/p>\u003cp>                boolean realtime;\u003c/p>\u003cp>                private final StringBuilder log = new StringBuilder();\u003c/p>\u003cp>                AtomicBoolean timedOut = new AtomicBoolean(false);\u003c/p>\u003cp>                AtomicBoolean isRunning = new AtomicBoolean(true);\u003c/p>\u003cp>                final Object isRunningLock=new Object();\u003c/p>\u003cp>                AtomicBoolean isLogging = new AtomicBoolean(true);\u003c/p>\u003cp>                final Object isLoggingLock=new Object();\u003c/p>\u003cp>                final Process processRunning;\u003c/p>\u003cp>                final Timer watchDogTimer = new Timer(timeout, new ActionListener() {\u003c/p>\u003cp>                    @Override\u003c/p>\u003cp>                    public void actionPerformed(ActionEvent evt) {\u003c/p>\u003cp>                        Log.level4Debug(\"Watchdog Triggered!  Command timed out.\");\u003c/p>\u003cp>                        timedOut.set(true);\u003c/p>\u003cp>                        synchronized (processRunning) {\u003c/p>\u003cp>                            processRunning.notifyAll();\u003c/p>\u003cp>                        }\u003c/p>\u003cp>                    }\u003c/p>\u003cp>                });\u003c/p>\u003cp>                synchronized void log(char c){\u003c/p>\u003cp>                    log.append(c);\u003c/p>\u003cp>                    if (realtime){\u003c/p>\u003cp>                        Log.progress(Character.toString(c));\u003c/p>\u003cp>                        String logstring=log.toString();\u003c/p>\u003cp>                        for (String check:restartTimerKeywords){\u003c/p>\u003cp>                            if (logstring.endsWith(check) &amp;&amp; isRunning.get()){\u003c/p>\u003cp>                                Log.level4Debug(\"Timer Reset on keyword \"+check);\u003c/p>\u003cp>                                watchDogTimer.restart();\u003c/p>\u003cp>                            }\u003c/p>\u003cp>                        }\u003c/p>\u003cp>                    }\u003c/p>\u003cp>                }\u003c/p>\u003cp>                synchronized String get(){\u003c/p>\u003cp>                    return log.toString();\u003c/p>\u003cp>                }\u003c/p>\u003cp>            }\u003c/p>\u003cp>            final TimeoutLogger tl = new TimeoutLogger(logLevel2,process);\u003c/p>\u003cp>            /*if the watchDogtimer elapses, the timedOut boolean is set true\u003c/p>\u003cp>             and the processRunning object is notified to release main process\u003c/p>\u003cp>             wait.\u003c/p>\u003cp>             */\u003c/p>\u003cp>            /*notify the processRunning object when the thread is complete to\u003c/p>\u003cp>             release the lock.\u003c/p>\u003cp>             */\u003c/p>\u003cp>            Thread processMonitor = new Thread(new Runnable() {\u003c/p>\u003cp>                @Override\u003c/p>\u003cp>                public void run() {\u003c/p>\u003cp>                    try {\u003c/p>\u003cp>                        tl.processRunning.waitFor();\u003c/p>\u003cp>                        tl.watchDogTimer.stop();\u003c/p>\u003cp>                        tl.isRunning.set(false);\u003c/p>\u003cp>                        Log.level4Debug(\"Process Monitor done.\");\u003c/p>\u003cp>                        synchronized (tl.processRunning) {\u003c/p>\u003cp>                            tl.processRunning.notifyAll();\u003c/p>\u003cp>                        }\u003c/p>\u003cp>                    } catch (InterruptedException ex) {\u003c/p>\u003cp>                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\u003c/p>\u003cp>                    }\u003c/p>\u003cp>                }\u003c/p>\u003cp>            });\u003c/p>\u003cp>            processMonitor.setName(\"Monitoring Process Exit Status from \" + cmd[0]);\u003c/p>\u003cp>            /*\u003c/p>\u003cp>            reads the output and restarts the timer if required.\u003c/p>\u003cp>            */\u003c/p>\u003cp>            Thread reader = new Thread(new Runnable() {\u003c/p>\u003cp>                @Override\u003c/p>\u003cp>                public void run() {\u003c/p>\u003cp>                   BufferedInputStream STDOUT = new BufferedInputStream(tl.processRunning.getInputStream());\u003c/p>\u003cp>                   Log.level4Debug(\"Instantiating reader process\");\u003c/p>\u003cp>                   try {\u003c/p>\u003cp>                       while(tl.isRunning.get()&amp;&amp; !tl.timedOut.get()){\u003c/p>\u003cp>                               if(STDOUT.available()&gt;0){\u003c/p>\u003cp>                                   char read=(char)STDOUT.read();\u003c/p>\u003cp>                                   tl.log(read);\u003c/p>\u003cp>                               }\u003c/p>\u003cp>                       }\u003c/p>\u003cp>                       tl.watchDogTimer.stop();\u003c/p>\u003cp>                       Thread.sleep(100);\u003c/p>\u003cp>                       while(STDOUT.available()&gt;0){\u003c/p>\u003cp>                           char read=(char)STDOUT.read();\u003c/p>\u003cp>                           tl.log(read);\u003c/p>\u003cp>                       }\u003c/p>\u003cp>                       tl.isLogging.set(false);\u003c/p>\u003cp>                       synchronized (tl.processRunning){\u003c/p>\u003cp>                           tl.processRunning.notifyAll();\u003c/p>\u003cp>                       }\u003c/p>\u003cp>                   } catch (IOException ex) {\u003c/p>\u003cp>                       Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\u003c/p>\u003cp>                   } catch (InterruptedException ex) {\u003c/p>\u003cp>                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\u003c/p>\u003cp>                    }\u003c/p>\u003cp>                }\u003c/p>\u003cp>            });\u003c/p>\u003cp>            reader.setName(\"Reading and monitoring output from \" + cmd[0]);\u003c/p>\u003cp>            //start the monitoring objects\u003c/p>\u003cp>            reader.start();\u003c/p>\u003cp>            tl.watchDogTimer.start();\u003c/p>\u003cp>            processMonitor.start();\u003c/p>\u003cp>            synchronized (tl.processRunning){\u003c/p>\u003cp>                tl.processRunning.wait();\u003c/p>\u003cp>            }\u003c/p>\u003cp>            if (tl.isLogging.get()){\u003c/p>\u003cp>                synchronized(tl.processRunning){\u003c/p>\u003cp>                    tl.processRunning.wait();\u003c/p>\u003cp>                }\u003c/p>\u003cp>            }\u003c/p>\u003cp>            String retvalue = tl.get();\u003c/p>\u003cp>            //kill the process\u003c/p>\u003cp>            if (tl.timedOut.get()) {\u003c/p>\u003cp>                retvalue = \"Timeout!!! \" + retvalue;\u003c/p>\u003cp>                process.destroy();\u003c/p>\u003cp>            }\u003c/p>\u003cp>            return retvalue;\u003c/p>\u003cp>        } catch (IOException ex) {\u003c/p>\u003cp>            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\u003c/p>\u003cp>        } catch (InterruptedException ex) {\u003c/p>\u003cp>            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);\u003c/p>\u003cp>        }\u003c/p>\u003cp>        return \"\";\u003c/p>\u003cp>    }\u003c/p>","id":"1198719655","isDeleted":false,"likes":4},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"gorki","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":3,"isFlagged":false,"dislikes":0,"raw_message":"Please help me...\r\njava.io.IOException: Cannot run program \"host\": CreateProcess error=2, The system cannot find the file specified\r\n\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)\r\n\tat java.lang.Runtime.exec(Runtime.java:615)\r\n\tat java.lang.Runtime.exec(Runtime.java:448)\r\n\tat java.lang.Runtime.exec(Runtime.java:345)\r\n\tat com.levanlong.demo.file.inputstream.IpAddress.main(IpAddress.java:34)\r\nCaused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified\r\n\tat java.lang.ProcessImpl.create(Native Method)\r\n\tat java.lang.ProcessImpl.(ProcessImpl.java:188)\r\n\tat java.lang.ProcessImpl.start(ProcessImpl.java:132)\r\n\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1021)\r\n\t... 4 more","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2012-11-16T16:59:08","isEdited":false,"message":"\u003cp>Please help me...\u003cbr>java.io.IOException: Cannot run program \"host\": CreateProcess error=2, The system cannot find the file specified\u003cbr>\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)\u003cbr>\tat java.lang.Runtime.exec(Runtime.java:615)\u003cbr>\tat java.lang.Runtime.exec(Runtime.java:448)\u003cbr>\tat java.lang.Runtime.exec(Runtime.java:345)\u003cbr>\tat com.levanlong.demo.file.inputstream.IpAddress.main(IpAddress.java:34)\u003cbr>Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified\u003cbr>\tat java.lang.ProcessImpl.create(Native Method)\u003cbr>\tat java.lang.ProcessImpl.(ProcessImpl.java:188)\u003cbr>\tat java.lang.ProcessImpl.start(ProcessImpl.java:132)\u003cbr>\tat java.lang.ProcessBuilder.start(ProcessBuilder.java:1021)\u003cbr>\t... 4 more\u003c/p>","id":"1129078214","isDeleted":false,"likes":3},{"isHighlighted":false,"forum":"mkyong","parent":1129078214,"author":{"name":"mkyong","url":"http://www.mkyong.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":1,"isFlagged":false,"dislikes":0,"raw_message":"\"host\" is a command available in most *nix systems. Make sure your system has installed it.","isApproved":true,"isSpam":false,"thread":"1978021126","depth":1,"numReports":0,"createdAt":"2012-11-19T12:11:05","isEdited":false,"message":"\u003cp>\"host\" is a command available in most *nix systems. Make sure your system has installed it.\u003c/p>","id":"1129087183","isDeleted":false,"likes":1},{"isHighlighted":false,"forum":"mkyong","parent":1129087183,"author":{"name":"Dele","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"I have a similar error. I ran it on windows 7 and got same erroe message. \r\nHow, sir, can I resolve the problem?\r\n\r\nERROR:\r\n\r\n\r\n\r\njava.io.IOException: Cannot run program \"host\": CreateProcess error=2, The system cannot find the file specified\r\n        at java.lang.ProcessBuilder.start(ProcessBuilder.java:459)\r\n        at java.lang.Runtime.exec(Runtime.java:593)\r\n        at java.lang.Runtime.exec(Runtime.java:431)\r\n        at java.lang.Runtime.exec(Runtime.java:328)\r\n        at javaClasses.ExecuteShellCommand.main(ExecuteShellCommand.java:37)\r\nCaused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified\r\n        at java.lang.ProcessImpl.create(Native Method)\r\n        at java.lang.ProcessImpl.(ProcessImpl.java:81)\r\n        at java.lang.ProcessImpl.start(ProcessImpl.java:30)\r\n        at java.lang.ProcessBuilder.start(ProcessBuilder.java:452)\r\n        ... 4 more\r\nBUILD SUCCESSFUL (total time: 2 seconds)","isApproved":true,"isSpam":false,"thread":"1978021126","depth":2,"numReports":0,"createdAt":"2013-03-01T15:39:21","isEdited":false,"message":"\u003cp>I have a similar error. I ran it on windows 7 and got same erroe message. \u003cbr>How, sir, can I resolve the problem?\u003c/p>\u003cp>ERROR:\u003c/p>\u003cp>java.io.IOException: Cannot run program \"host\": CreateProcess error=2, The system cannot find the file specified\u003cbr>        at java.lang.ProcessBuilder.start(ProcessBuilder.java:459)\u003cbr>        at java.lang.Runtime.exec(Runtime.java:593)\u003cbr>        at java.lang.Runtime.exec(Runtime.java:431)\u003cbr>        at java.lang.Runtime.exec(Runtime.java:328)\u003cbr>        at javaClasses.ExecuteShellCommand.main(ExecuteShellCommand.java:37)\u003cbr>Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified\u003cbr>        at java.lang.ProcessImpl.create(Native Method)\u003cbr>        at java.lang.ProcessImpl.(ProcessImpl.java:81)\u003cbr>        at java.lang.ProcessImpl.start(ProcessImpl.java:30)\u003cbr>        at java.lang.ProcessBuilder.start(ProcessBuilder.java:452)\u003cbr>        ... 4 more\u003cbr>BUILD SUCCESSFUL (total time: 2 seconds)\u003c/p>","id":"1129089502","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"username":"hongjunho","about":"","name":"Hong Junho","disable3rdPartyTrackers":false,"url":"","joinedAt":"2014-01-14T00:19:50","rep":1.2323199999999999,"profileUrl":"http://disqus.com/hongjunho/","reputation":1.2323199999999999,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"90516227","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/hongjunho.jpg","cache":"//a.disquscdn.com/uploads/users/9051/6227/avatar32.jpg?1389658797"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/hongjunho.jpg","cache":"//a.disquscdn.com/uploads/users/9051/6227/avatar92.jpg?1389658797","large":{"permalink":"http://disqus.com/api/users/avatars/hongjunho.jpg","cache":"//a.disquscdn.com/uploads/users/9051/6227/avatar92.jpg?1389658797"}}},"media":[],"points":2,"isFlagged":false,"dislikes":0,"raw_message":"Using array parameter is better, because...when some parameter has blank ( ex. \"ABC DE\" ) it will be treated as 2 parameters...\n\nArray parameter is more safe... :)\n\nSorry...english is not my mother tongue...","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-01-14T00:19:56","isEdited":false,"message":"\u003cp>Using array parameter is better, because...when some parameter has blank ( ex. \"ABC DE\" ) it will be treated as 2 parameters...\u003c/p>\u003cp>Array parameter is more safe... :)\u003c/p>\u003cp>Sorry...english is not my mother tongue...\u003c/p>","id":"1199343677","isDeleted":false,"likes":2},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"username":"mrdoob","about":"","name":"_mrdoob_","disable3rdPartyTrackers":false,"url":"","joinedAt":"2014-01-13T18:03:33","rep":1.232222,"profileUrl":"http://disqus.com/mrdoob/","reputation":1.232222,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"90468416","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/mrdoob.jpg","cache":"//a.disquscdn.com/uploads/users/9046/8416/avatar32.jpg?1389636233"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/mrdoob.jpg","cache":"//a.disquscdn.com/uploads/users/9046/8416/avatar92.jpg?1389636233","large":{"permalink":"http://disqus.com/api/users/avatars/mrdoob.jpg","cache":"//a.disquscdn.com/uploads/users/9046/8416/avatar92.jpg?1389636233"}}},"media":[],"points":1,"isFlagged":false,"dislikes":0,"raw_message":"Classic vulnerability :)","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-01-13T18:03:52","isEdited":false,"message":"\u003cp>Classic vulnerability :)\u003c/p>","id":"1198715329","isDeleted":false,"likes":1},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"username":"disqus_pTx0aupCQg","about":"","name":"Stephane","disable3rdPartyTrackers":false,"url":"","joinedAt":"2013-01-09T17:53:09","rep":1.189087,"profileUrl":"http://disqus.com/disqus_pTx0aupCQg/","reputation":1.189087,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"40636788","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_pTx0aupCQg.jpg","cache":"//a.disquscdn.com/uploads/users/4063/6788/avatar32.jpg?1414837551"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_pTx0aupCQg.jpg","cache":"//a.disquscdn.com/uploads/users/4063/6788/avatar92.jpg?1414837551","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_pTx0aupCQg.jpg","cache":"//a.disquscdn.com/uploads/users/4063/6788/avatar92.jpg?1414837551"}}},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"The article would be even better with a note on how to run a shell file sitting in the resources directory.\nThanks for the jump start anyway !","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-10-30T09:36:29","isEdited":false,"message":"\u003cp>The article would be even better with a note on how to run a shell file sitting in the resources directory.\u003cbr>Thanks for the jump start anyway !\u003c/p>","id":"1660772805","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"pk","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"I really like your articles on Java. For this one i guess i could not do as mentioned. I googled and figured out that you need to first connect to the linux box from java and then you can execute shell commands. I could not make the Linux commands run from Java which is on Windows using this code.","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-10-23T20:44:30","isEdited":false,"message":"\u003cp>I really like your articles on Java. For this one i guess i could not do as mentioned. I googled and figured out that you need to first connect to the linux box from java and then you can execute shell commands. I could not make the Linux commands run from Java which is on Windows using this code.\u003c/p>","id":"1650597695","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"vishal","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Hi How can we add Timeout ?","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-05-20T11:02:50","isEdited":false,"message":"\u003cp>Hi How can we add Timeout ?\u003c/p>","id":"1395174576","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"GD","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"If I want to check my java version on Mac, I used the \"PING\" example and replaced the command string with my value i.e. String command = \"java -version\";\nbut the command does not get executed at all. Can you please let me know what am I missing?","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-05-03T13:38:24","isEdited":false,"message":"\u003cp>If I want to check my java version on Mac, I used the \"PING\" example and replaced the command string with my value i.e. String command = \"java -version\";\u003cbr>but the command does not get executed at all. Can you please let me know what am I missing?\u003c/p>","id":"1367919209","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"can","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"GOOOOOD","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-03-15T23:14:17","isEdited":false,"message":"\u003cp>GOOOOOD\u003c/p>","id":"1286356248","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"ug","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Mkyong your tutorials are always straight to the point, bravo.","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-03-15T11:32:16","isEdited":false,"message":"\u003cp>Mkyong your tutorials are always straight to the point, bravo.\u003c/p>","id":"1285641889","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"S Philip","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Hi I am trying to create a Terminal Emulator for Linux using Java... Can you help me by giving a direction.. \n\nThanks in  advance...","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-02-06T14:45:25","isEdited":false,"message":"\u003cp>Hi I am trying to create a Terminal Emulator for Linux using Java... Can you help me by giving a direction..\u003c/p>\u003cp>Thanks in  advance...\u003c/p>","id":"1233430044","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"Guest","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Access denied. Option -c requires administrative privileges. ----how to fix admin issue on windows 8.1","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-01-21T08:03:27","isEdited":false,"message":"\u003cp>Access denied. Option -c requires administrative privileges. ----how to fix admin issue on windows 8.1\u003c/p>","id":"1210172047","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":1210172047,"author":{"name":"Guest","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"ok i got it had to read -n yea, thanks","isApproved":true,"isSpam":false,"thread":"1978021126","depth":1,"numReports":0,"createdAt":"2014-01-21T08:15:10","isEdited":false,"message":"\u003cp>ok i got it had to read -n yea, thanks\u003c/p>","id":"1210177910","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"username":"sriramganesh","about":"","name":"Sriram Ganesh","disable3rdPartyTrackers":false,"url":"","joinedAt":"2014-01-12T22:20:32","rep":1.2381259999999998,"profileUrl":"http://disqus.com/sriramganesh/","reputation":1.2381259999999998,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"90356352","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/sriramganesh.jpg","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/sriramganesh.jpg","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/sriramganesh.jpg","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"}}},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Thanks a lot for another excellent tutorial Mr.Yong. The most reliable website...!!","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2014-01-12T22:21:40","isEdited":false,"message":"\u003cp>Thanks a lot for another excellent tutorial Mr.Yong. The most reliable website...!!\u003c/p>","id":"1197738493","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"John","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"You can also use\r\n\r\n\u003cpre lang=\"java\">\r\nProcessBuilder pb = new ProcessBuilder(computeCommandLine());\r\npb.directory(workingDirectory);\r\n\t\t\t\r\nMap&#60;String, String&#62; env = pb.environment();\r\nenv.put(&#34;VAR1&#34;, &#34;myValue&#34;);\r\nenv.remove(&#34;OTHERVAR&#34;);\r\nenv.put(&#34;VAR2&#34;, env.get(&#34;VAR1&#34;) + &#34;suffix&#34;);\r\n\t\t\t\r\nProcess p = pb.start();\r\n...\r\n\u003c/pre>","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2012-12-13T20:17:56","isEdited":false,"message":"\u003cp>You can also use\u003c/p>\u003cp>\u003c/p>\u003cpre>ProcessBuilder pb = new ProcessBuilder(computeCommandLine());\u003cbr>pb.directory(workingDirectory);\u003cbr>\t\t\t\u003cbr>Map&lt;String, String&gt; env = pb.environment();\u003cbr>env.put(\"VAR1\", \"myValue\");\u003cbr>env.remove(\"OTHERVAR\");\u003cbr>env.put(\"VAR2\", env.get(\"VAR1\") + \"suffix\");\u003cbr>\t\t\t\u003cbr>Process p = pb.start();\u003cbr>...\u003cbr>\u003c/pre>","id":"1129078216","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":null,"author":{"name":"raghavendra","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"\u003cpre lang=\"java\"> #\r\n# A fatal error has been detected by the Java Runtime Environment:\r\n#\r\n#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x10038859, pid=4248, tid=204\r\n#\r\n# JRE version: 6.0_18-b07\r\n# Java VM: Java HotSpot(TM) Client VM (16.0-b13 mixed mode, sharing windows-x86 )\r\n# Problematic frame:\r\n# C  [mpe.dll+0x38859]\r\n#\r\n# An error report file with more information is saved as:\r\n# C:\\Users\\workspace\\EJBWS\\DLLSTest\\hs_err_pid4248.log\r\n#\r\n# If you would like to submit a bug report, please visit:\r\n#   http://java.sun.com/webapps/bugreport/crash.jsp\r\n# The crash happened outside the Java Virtual Machine in native code.\r\n# See problematic frame for where to report the bug.\r\n# \u003c/pre>\r\n\r\n\r\nwhen i'm executing the c++ dll i'm getting the above error. I am unable to think why am i getting this error. the dll consists of code which generates a graphical  window. mkyong plz help me in this issue...\r\n\r\nThanks \r\nRaghavendra","isApproved":true,"isSpam":false,"thread":"1978021126","depth":0,"numReports":0,"createdAt":"2012-11-14T16:29:34","isEdited":false,"message":"\u003cpre> #\u003cbr># A fatal error has been detected by the Java Runtime Environment:\u003cbr>#\u003cbr>#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x10038859, pid=4248, tid=204\u003cbr>#\u003cbr># JRE version: 6.0_18-b07\u003cbr># Java VM: Java HotSpot(TM) Client VM (16.0-b13 mixed mode, sharing windows-x86 )\u003cbr># Problematic frame:\u003cbr># C  [mpe.dll+0x38859]\u003cbr>#\u003cbr># An error report file with more information is saved as:\u003cbr># C:\\Users\\workspace\\EJBWS\\DLLSTest\\hs_err_pid4248.log\u003cbr>#\u003cbr># If you would like to submit a bug report, please visit:\u003cbr>#   http://java.sun.com/webapps/bugreport/crash.jsp\u003cbr># The crash happened outside the Java Virtual Machine in native code.\u003cbr># See problematic frame for where to report the bug.\u003cbr># \u003c/pre>\u003cp>\u003c/p>\u003cp>when i'm executing the c++ dll i'm getting the above error. I am unable to think why am i getting this error. the dll consists of code which generates a graphical  window. mkyong plz help me in this issue...\u003c/p>\u003cp>Thanks \u003cbr>Raghavendra\u003c/p>","id":"1129078213","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"mkyong","parent":1129078213,"author":{"name":"raymond jones","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar32.png","cache":"//a.disquscdn.com/1415232117/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1415232117/images/noavatar92.png","cache":"//a.disquscdn.com/1415232117/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Suggestion to try displaying a very simple message box first in dll in order to determine if you gui has the error and not the code.  If this works, then the problem is in your graphical window and not the dll or java.  Try this:\r\n// buffer256 is declared in header file or cpp file.\r\nstatic char buffer256[256];   // Generic buffer\r\n\r\n// put code below in function in cpp file.\r\nstrcpy_s(buffer256, 256, \"You are in C++ dll.\");\r\n::MessageBoxA(NULL, buffer256, \"Message from MyDll.dll\", 0);\r\n\r\nTip:  when working with strings in dll's, I found that using a char buffer declared in a header file and using it instead of creating and destroying strings in functions eliminated an intermittent bug reported from the Window's ntdll.dll.","isApproved":true,"isSpam":false,"thread":"1978021126","depth":1,"numReports":0,"createdAt":"2012-11-16T19:55:34","isEdited":false,"message":"\u003cp>Suggestion to try displaying a very simple message box first in dll in order to determine if you gui has the error and not the code.  If this works, then the problem is in your graphical window and not the dll or java.  Try this:\u003cbr>// buffer256 is declared in header file or cpp file.\u003cbr>static char buffer256[256];   // Generic buffer\u003c/p>\u003cp>// put code below in function in cpp file.\u003cbr>strcpy_s(buffer256, 256, \"You are in C++ dll.\");\u003cbr>::MessageBoxA(NULL, buffer256, \"Message from MyDll.dll\", 0);\u003c/p>\u003cp>Tip:  when working with strings in dll's, I found that using a char buffer declared in a header file and using it instead of creating and destroying strings in functions eliminated an intermittent bug reported from the Window's ntdll.dll.\u003c/p>","id":"1129087182","isDeleted":false,"likes":0}],"thread":{"feed":"https://mkyong.disqus.com/how_to_execute_shell_command_from_java/latest.rss","uploadAdd":"//mkyong.disqus.com/thread/how_to_execute_shell_command_from_java/async_media_upload/","identifiers":["12827 http://www.mkyong.com/?p=12827"],"dislikes":0,"likes":0,"message":"","id":"1978021126","createdAt":"2013-11-19T03:20:15","category":"2714001","author":"20319410","userScore":0,"moderators":[20319410],"isDeleted":false,"hasStreaming":false,"uploadRemove":"//mkyong.disqus.com/thread/how_to_execute_shell_command_from_java/async_media_remove/","raw_message":"","isClosed":false,"link":"http://www.mkyong.com/java/how-to-execute-shell-command-from-java/","slug":"how_to_execute_shell_command_from_java","forum":"mkyong","clean_title":"How to execute shell command from Java","posts":19,"userSubscription":false,"title":"How to execute shell command from Java","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="a_data/lounge.js" id="bootstrap-script" data-app="lounge"></script>
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="discovery-top" data-tracking-area="discovery-north"></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div style="display: none;" id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+<a href="#" data-role="post-count" class="publisher-nav-color" data-nav="conversation"><span class="comment-count">
+19 comments
+</span>
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="#" class="publisher-nav-color" data-nav="community" id="community-tab">
+<span class="community-name">
+<strong>Mkyong.com</strong>
+
+</span>
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li>
+<li class="notification-menu" data-role="notification-menu"><a href="#" class="notification-container" data-nav="dashboard">
+<span class="notification-icon icon-comment"></span>
+<span class="notification-count" data-role="notification-count"></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+<li data-role="post-sort" class="dropdown sorting">
+<a href="#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li class="selected">
+<a href="#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+</ul>
+</li>
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div data-role="vote-button" class="thread-likes"><a href="#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a>
+</div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="posts">
+<div id="form"><form class="reply">
+<div class="postbox">
+<div role="alert"></div>
+<div class="avatar">
+<span class="user">
+<img data-role="user-avatar" src="a_data/noavatar92.png" alt="Avatar">
+</span>
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;" data-role="editable" aria-multiline="true" role="textbox" tabindex="0" class="textarea" contenteditable="true"><p><br></p></div><div style="display: none;"><ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+</ul>
+</div>
+</div>
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+<ul data-role="login-menu" class="services login-buttons">
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+<li class="auth-signup">
+<button type="button" data-action="auth:disqus" title="Disqus">Sign up for Disqus</button>
+</li>
+</ul>
+</div>
+<div class="guest">
+<h6 class="guest-form-title">
+or pick a name
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" placeholder="Name" name="display_name" id="view186_display_name" maxlength="30" type="text">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" placeholder="Email" name="email" id="view186_email" type="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" placeholder="Password" name="password" id="view186_password" type="password">
+</p>
+<div class="guest-checkbox">
+<label>
+<input name="author-guest" type="checkbox">
+I'd rather post as guest
+</label>
+</div>
+</div>
+</div>
+<div class="proceed">
+<button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span></button>
+<button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span></button>
+</div>
+</section>
+
+</div></div>
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none" data-role="realtime-notification">
+</button>
+
+<div id="no-posts" style="display:none">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li id="post-1198719655" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/adam_outler/" class="user" data-action="profile" data-username="adam_outler" data-user="52933540">
+<img data-role="user-avatar" data-user="52933540" src="a_data/noavatar92_002.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="#" data-action="profile" data-user="52933540" data-username="adam_outler" data-role="username">Adam Outler</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1198719655" data-role="relative-time" class="time-ago" title="Monday, January 13, 2014 11:37 PM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div style="height: 374px;" class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>The following code allows you to set a timer, restart the timer on 
+keywords, and specify if you want it to be sent to your log or not.  
+This prevents several problems I've run into while programming on the 
+command line.</p><p>The method is complex, very complex, but it works 
+well and avoids loops in favor of waiting for a synchronized 
+notification whenever possible. It uses three threads.  The main thread 
+launches the application and waits.  The reader thread processes 
+whatever comes out of the application. The watchdog thread monitors for 
+timeout and gets kicked by the reader thread to restart the timer 
+whenever a keyword is detected.</p><p>public String 
+timeoutValueCheckingShellCommand(final String[] cmd, final String[] 
+restartTimerKeywords, final int timeout,final boolean logLevel2) {</p><p>        StringBuilder sb = new StringBuilder();</p><p>        try {</p><p>            ProcessBuilder p = new ProcessBuilder(cmd);</p><p>            p=p.redirectErrorStream(true);</p><p>            final Process process = p.start();</p><p>            /*</p><p>             TimeoutLogger is a place to hold a common object for use through</p><p>             the various threads. It is used for logging of data, locking the</p><p>             main thread on the processRunning object, timeout status and</p><p>             monitoring of if the thread is alive or not.</p><p>             */</p><p>            class TimeoutLogger {</p><p>                TimeoutLogger(boolean realtime,Process p){</p><p>                    this.realtime=realtime;</p><p>                    this.processRunning=p;</p><p>                }</p><p>                boolean realtime;</p><p>                private final StringBuilder log = new StringBuilder();</p><p>                AtomicBoolean timedOut = new AtomicBoolean(false);</p><p>                AtomicBoolean isRunning = new AtomicBoolean(true);</p><p>                final Object isRunningLock=new Object();</p><p>                AtomicBoolean isLogging = new AtomicBoolean(true);</p><p>                final Object isLoggingLock=new Object();</p><p>                final Process processRunning;</p><p>                final Timer watchDogTimer = new Timer(timeout, new ActionListener() {</p><p>                    @Override</p><p>                    public void actionPerformed(ActionEvent evt) {</p><p>                        Log.level4Debug("Watchdog Triggered!  Command timed out.");</p><p>                        timedOut.set(true);</p><p>                        synchronized (processRunning) {</p><p>                            processRunning.notifyAll();</p><p>                        }</p><p>                    }</p><p>                });</p><p>                synchronized void log(char c){</p><p>                    log.append(c);</p><p>                    if (realtime){</p><p>                        Log.progress(Character.toString(c));</p><p>                        String logstring=log.toString();</p><p>                        for (String check:restartTimerKeywords){</p><p>                            if (logstring.endsWith(check) &amp;&amp; isRunning.get()){</p><p>                                Log.level4Debug("Timer Reset on keyword "+check);</p><p>                                watchDogTimer.restart();</p><p>                            }</p><p>                        }</p><p>                    }</p><p>                }</p><p>                synchronized String get(){</p><p>                    return log.toString();</p><p>                }</p><p>            }</p><p>            final TimeoutLogger tl = new TimeoutLogger(logLevel2,process);</p><p>            /*if the watchDogtimer elapses, the timedOut boolean is set true</p><p>             and the processRunning object is notified to release main process</p><p>             wait.</p><p>             */</p><p>            /*notify the processRunning object when the thread is complete to</p><p>             release the lock.</p><p>             */</p><p>            Thread processMonitor = new Thread(new Runnable() {</p><p>                @Override</p><p>                public void run() {</p><p>                    try {</p><p>                        tl.processRunning.waitFor();</p><p>                        tl.watchDogTimer.stop();</p><p>                        tl.isRunning.set(false);</p><p>                        Log.level4Debug("Process Monitor done.");</p><p>                        synchronized (tl.processRunning) {</p><p>                            tl.processRunning.notifyAll();</p><p>                        }</p><p>                    } catch (InterruptedException ex) {</p><p>                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);</p><p>                    }</p><p>                }</p><p>            });</p><p>            processMonitor.setName("Monitoring Process Exit Status from " + cmd[0]);</p><p>            /*</p><p>            reads the output and restarts the timer if required.</p><p>            */</p><p>            Thread reader = new Thread(new Runnable() {</p><p>                @Override</p><p>                public void run() {</p><p>                   BufferedInputStream STDOUT = new BufferedInputStream(tl.processRunning.getInputStream());</p><p>                   Log.level4Debug("Instantiating reader process");</p><p>                   try {</p><p>                       while(tl.isRunning.get()&amp;&amp; !tl.timedOut.get()){</p><p>                               if(STDOUT.available()&gt;0){</p><p>                                   char read=(char)STDOUT.read();</p><p>                                   tl.log(read);</p><p>                               }</p><p>                       }</p><p>                       tl.watchDogTimer.stop();</p><p>                       Thread.sleep(100);</p><p>                       while(STDOUT.available()&gt;0){</p><p>                           char read=(char)STDOUT.read();</p><p>                           tl.log(read);</p><p>                       }</p><p>                       tl.isLogging.set(false);</p><p>                       synchronized (tl.processRunning){</p><p>                           tl.processRunning.notifyAll();</p><p>                       }</p><p>                   } catch (IOException ex) {</p><p>                       Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);</p><p>                   } catch (InterruptedException ex) {</p><p>                        Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);</p><p>                    }</p><p>                }</p><p>            });</p><p>            reader.setName("Reading and monitoring output from " + cmd[0]);</p><p>            //start the monitoring objects</p><p>            reader.start();</p><p>            tl.watchDogTimer.start();</p><p>            processMonitor.start();</p><p>            synchronized (tl.processRunning){</p><p>                tl.processRunning.wait();</p><p>            }</p><p>            if (tl.isLogging.get()){</p><p>                synchronized(tl.processRunning){</p><p>                    tl.processRunning.wait();</p><p>                }</p><p>            }</p><p>            String retvalue = tl.get();</p><p>            //kill the process</p><p>            if (tl.timedOut.get()) {</p><p>                retvalue = "Timeout!!! " + retvalue;</p><p>                process.destroy();</p><p>            }</p><p>            return retvalue;</p><p>        } catch (IOException ex) {</p><p>            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);</p><p>        } catch (InterruptedException ex) {</p><p>            Logger.getLogger(Shell.class.getName()).log(Level.SEVERE, null, ex);</p><p>        }</p><p>        return "";</p><p>    }</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-4" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">4</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1198719655">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1198719655">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1129078214" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">gorki</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078214" data-role="relative-time" class="time-ago" title="Friday, November 16, 2012 10:29 PM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Please help me...<br>java.io.IOException: Cannot run program "host": CreateProcess error=2, The system cannot find the file specified<br>	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)<br>	at java.lang.Runtime.exec(Runtime.java:615)<br>	at java.lang.Runtime.exec(Runtime.java:448)<br>	at java.lang.Runtime.exec(Runtime.java:345)<br>	at com.levanlong.demo.file.inputstream.IpAddress.main(IpAddress.java:34)<br>Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified<br>	at java.lang.ProcessImpl.create(Native Method)<br>	at java.lang.ProcessImpl.(ProcessImpl.java:188)<br>	at java.lang.ProcessImpl.start(ProcessImpl.java:132)<br>	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1021)<br>	... 4 more</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-3" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">3</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078214">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129078214">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-1129087183" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">mkyong</span>
+
+<span><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078214" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> gorki</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129087183" data-role="relative-time" class="time-ago" title="Monday, November 19, 2012 5:41 PM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>"host" is a command available in most *nix systems. Make sure your system has installed it.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129087183">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129087183">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-1129089502" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Dele</span>
+
+<span><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129087183" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> mkyong</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129089502" data-role="relative-time" class="time-ago" title="Friday, March 1, 2013 9:09 PM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>I have a similar error. I ran it on windows 7 and got same erroe message. <br>How, sir, can I resolve the problem?</p><p>ERROR:</p><p>java.io.IOException: Cannot run program "host": CreateProcess error=2, The system cannot find the file specified<br>        at java.lang.ProcessBuilder.start(ProcessBuilder.java:459)<br>        at java.lang.Runtime.exec(Runtime.java:593)<br>        at java.lang.Runtime.exec(Runtime.java:431)<br>        at java.lang.Runtime.exec(Runtime.java:328)<br>        at javaClasses.ExecuteShellCommand.main(ExecuteShellCommand.java:37)<br>Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified<br>        at java.lang.ProcessImpl.create(Native Method)<br>        at java.lang.ProcessImpl.(ProcessImpl.java:81)<br>        at java.lang.ProcessImpl.start(ProcessImpl.java:30)<br>        at java.lang.ProcessBuilder.start(ProcessBuilder.java:452)<br>        ... 4 more<br>BUILD SUCCESSFUL (total time: 2 seconds)</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129089502">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129089502">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li></ul>
+
+</li><li id="post-1199343677" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/hongjunho/" class="user" data-action="profile" data-username="hongjunho" data-user="90516227">
+<img data-role="user-avatar" data-user="90516227" src="a_data/noavatar92_002.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="#" data-action="profile" data-user="90516227" data-username="hongjunho" data-role="username">Hong Junho</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1199343677" data-role="relative-time" class="time-ago" title="Tuesday, January 14, 2014 5:49 AM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Using array parameter is better, because...when some parameter has blank ( ex. "ABC DE" ) it will be treated as 2 parameters...</p><p>Array parameter is more safe... :)</p><p>Sorry...english is not my mother tongue...</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-2" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1199343677">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1199343677">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1198715329" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/mrdoob/" class="user" data-action="profile" data-username="mrdoob" data-user="90468416">
+<img data-role="user-avatar" data-user="90468416" src="a_data/noavatar92_002.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="#" data-action="profile" data-user="90468416" data-username="mrdoob" data-role="username">_mrdoob_</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1198715329" data-role="relative-time" class="time-ago" title="Monday, January 13, 2014 11:33 PM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Classic vulnerability :)</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1198715329">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1198715329">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1660772805" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/disqus_pTx0aupCQg/" class="user" data-action="profile" data-username="disqus_pTx0aupCQg" data-user="40636788">
+<img data-role="user-avatar" data-user="40636788" src="a_data/noavatar92_002.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="#" data-action="profile" data-user="40636788" data-username="disqus_pTx0aupCQg" data-role="username">Stephane</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1660772805" data-role="relative-time" class="time-ago" title="Thursday, October 30, 2014 3:06 PM">
+9 days ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>The article would be even better with a note on how to run a shell file sitting in the resources directory.<br>Thanks for the jump start anyway !</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1660772805">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1660772805">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1650597695" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">pk</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1650597695" data-role="relative-time" class="time-ago" title="Friday, October 24, 2014 2:14 AM">
+16 days ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>I really like your articles on Java. For this one i guess i could not
+ do as mentioned. I googled and figured out that you need to first 
+connect to the linux box from java and then you can execute shell 
+commands. I could not make the Linux commands run from Java which is on 
+Windows using this code.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1650597695">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1650597695">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1395174576" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">vishal</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1395174576" data-role="relative-time" class="time-ago" title="Tuesday, May 20, 2014 4:32 PM">
+6 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hi How can we add Timeout ?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1395174576">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1395174576">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1367919209" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">GD</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1367919209" data-role="relative-time" class="time-ago" title="Saturday, May 3, 2014 7:08 PM">
+6 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>If I want to check my java version on Mac, I used the "PING" example 
+and replaced the command string with my value i.e. String command = 
+"java -version";<br>but the command does not get executed at all. Can you please let me know what am I missing?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1367919209">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1367919209">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1286356248" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">can</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1286356248" data-role="relative-time" class="time-ago" title="Sunday, March 16, 2014 4:44 AM">
+8 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>GOOOOOD</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1286356248">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1286356248">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1285641889" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">ug</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1285641889" data-role="relative-time" class="time-ago" title="Saturday, March 15, 2014 5:02 PM">
+8 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Mkyong your tutorials are always straight to the point, bravo.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1285641889">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1285641889">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1233430044" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">S Philip</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1233430044" data-role="relative-time" class="time-ago" title="Thursday, February 6, 2014 8:15 PM">
+9 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hi I am trying to create a Terminal Emulator for Linux using Java... Can you help me by giving a direction..</p><p>Thanks in  advance...</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1233430044">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1233430044">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1210172047" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Guest</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1210172047" data-role="relative-time" class="time-ago" title="Tuesday, January 21, 2014 1:33 PM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Access denied. Option -c requires administrative privileges. ----how to fix admin issue on windows 8.1</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1210172047">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1210172047">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-1210177910" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Guest</span>
+
+<span><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1210172047" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Guest</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1210177910" data-role="relative-time" class="time-ago" title="Tuesday, January 21, 2014 1:45 PM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>ok i got it had to read -n yea, thanks</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1210177910">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1210177910">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li><li id="post-1197738493" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/sriramganesh/" class="user" data-action="profile" data-username="sriramganesh" data-user="90356352">
+<img data-role="user-avatar" data-user="90356352" src="a_data/noavatar92_002.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="#" data-action="profile" data-user="90356352" data-username="sriramganesh" data-role="username">Sriram Ganesh</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1197738493" data-role="relative-time" class="time-ago" title="Monday, January 13, 2014 3:51 AM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks a lot for another excellent tutorial Mr.Yong. The most reliable website...!!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1197738493">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1197738493">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1129078216" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">John</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078216" data-role="relative-time" class="time-ago" title="Friday, December 14, 2012 1:47 AM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>You can also use</p><p></p><pre>ProcessBuilder pb = new ProcessBuilder(computeCommandLine());<br>pb.directory(workingDirectory);<br>			<br>Map&lt;String, String&gt; env = pb.environment();<br>env.put("VAR1", "myValue");<br>env.remove("OTHERVAR");<br>env.put("VAR2", env.get("VAR1") + "suffix");<br>			<br>Process p = pb.start();<br>...<br></pre>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078216">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129078216">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-1129078213" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">raghavendra</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078213" data-role="relative-time" class="time-ago" title="Wednesday, November 14, 2012 9:59 PM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<pre> #<br># A fatal error has been detected by the Java Runtime Environment:<br>#<br>#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x10038859, pid=4248, tid=204<br>#<br># JRE version: 6.0_18-b07<br># Java VM: Java HotSpot(TM) Client VM (16.0-b13 mixed mode, sharing windows-x86 )<br># Problematic frame:<br># C  [mpe.dll+0x38859]<br>#<br># An error report file with more information is saved as:<br># C:\Users\workspace\EJBWS\DLLSTest\hs_err_pid4248.log<br>#<br># If you would like to submit a bug report, please visit:<br>#   http://java.sun.com/webapps/bugreport/crash.jsp<br># The crash happened outside the Java Virtual Machine in native code.<br># See problematic frame for where to report the bug.<br># </pre><p></p><p>when
+ i'm executing the c++ dll i'm getting the above error. I am unable to 
+think why am i getting this error. the dll consists of code which 
+generates a graphical  window. mkyong plz help me in this issue...</p><p>Thanks <br>Raghavendra</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078213">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129078213">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li id="post-1129087182" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">raymond jones</span>
+
+<span><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129078213" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> raghavendra</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129087182" data-role="relative-time" class="time-ago" title="Saturday, November 17, 2012 1:25 AM">
+2 years ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Suggestion to try displaying a very simple message box first in dll 
+in order to determine if you gui has the error and not the code.  If 
+this works, then the problem is in your graphical window and not the dll
+ or java.  Try this:<br>// buffer256 is declared in header file or cpp file.<br>static char buffer256[256];   // Generic buffer</p><p>// put code below in function in cpp file.<br>strcpy_s(buffer256, 256, "You are in C++ dll.");<br>::MessageBoxA(NULL, buffer256, "Message from MyDll.dll", 0);</p><p>Tip:
+  when working with strings in dll's, I found that using a char buffer 
+declared in a header file and using it instead of creating and 
+destroying strings in functions eliminated an intermittent bug reported 
+from the Window's ntdll.dll.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+<span class="tooltip">You must sign in to down-vote this post.</span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.mkyong.com/java/how-to-execute-shell-command-from-java/#comment-1129087182">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1129087182">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display:none">
+<a href="#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" data-tracking-area="main" style="display:none" data-role="main" data-outbound-link="embed:community">
+</section>
+
+<section id="dashboard" style="display:none" data-role="main" data-tracking-area="main">
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main" data-tracking-area="main">
+</section>
+
+<div style="position: static; visibility: visible; display: block; width: 100%;" id="discovery" data-tracking-area="discovery-south"><div id="discovery-main-c264" class="discovery-main style-variant-default">
+<div id="discovery-note" class="discovery-note">
+<div class="alert">
+<button class="close" data-action="discovery-help-close" title="Close this box">×</button>
+Disqus helps you find new and interesting content, discussions and 
+products. Some sponsors and ecommerce sites may pay us for these 
+recommendations and links. <a href="http://help.disqus.com/customer/portal/articles/666278-introducing-promoted-discovery-and-f-a-q-" target="_blank">Learn more</a>
+ or <a href="https://www.surveymonkey.com/s/GHK872T" target="_blank">
+give us feedback</a>.
+</div>
+</div>
+
+<div class="discovery-options">
+<button class="discovery-help" data-action="discovery-help">
+What's this?
+</button>
+</div>
+
+<section id="col-organic-c264" class="col-organic discovery-col-0 ">
+<header class="discovery-col-header">
+
+<h2>Also on <strong>Mkyong.com</strong>
+</h2>
+
+
+</header>
+<ul class="discovery-posts"><li style="margin-bottom: 20px;" class="discovery-post post-0" id="discovery-link-organic-2966028953">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Feclipse%2Fhow-to-configure-hot-deploy-in-eclipse%2F%3AUhVTuRvueVj-E-NYsZGh_jzPrFc&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2966028953&amp;zone=thread&amp;area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="How to configure hot deploy in Eclipse">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+How to configure hot deploy in Eclipse
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+5 comments
+</li>
+<li class="time">2 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Feclipse%2Fhow-to-configure-hot-deploy-in-eclipse%2F%3AUhVTuRvueVj-E-NYsZGh_jzPrFc&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2966028953&amp;zone=thread&amp;area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Nemesis</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">JRebel is not free.</span></p>
+</a>
+
+</li>
+<li style="clear: right;" class="discovery-post post-1" id="discovery-link-organic-3172061464">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fant%2Fant-how-to-create-a-java-project%2F%3ARibzDY_gd04oOSj6gSxCyHNi70Y&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=3172061464&amp;zone=thread&amp;area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Ant – How to create a Java Project">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Ant – How to create a Java Project
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+2 comments
+</li>
+<li class="time">9 days ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fant%2Fant-how-to-create-a-java-project%2F%3ARibzDY_gd04oOSj6gSxCyHNi70Y&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=3172061464&amp;zone=thread&amp;area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Halil</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">Thank you for great sharing...http://www.halilcakal.com/word...</span></p>
+</a>
+
+</li>
+<li style="margin-bottom: 20px;" class="discovery-post post-2" id="discovery-link-organic-2903962336">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fnginx%2Fnginx-apache-tomcat-configuration-example%2F%3ARJAuMOvs5_y6I4CAnr4iFScffIc&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2903962336&amp;zone=thread&amp;area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Nginx + Apache Tomcat configuration example">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Nginx + Apache Tomcat configuration example
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+5 comments
+</li>
+<li class="time">3 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fnginx%2Fnginx-apache-tomcat-configuration-example%2F%3ARJAuMOvs5_y6I4CAnr4iFScffIc&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2903962336&amp;zone=thread&amp;area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">skygongle</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">SB</span></p>
+</a>
+
+</li>
+<li style="clear: right;" class="discovery-post post-3" id="discovery-link-organic-2706910943">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fhibernate%2Fjava-lang-classnotfoundexception-org-hibernate-service-jta-platform-spi-jtaplatform%2F%3A9mx37fyOx9xf29KsiyrdbyAcQ1k&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2706910943&amp;zone=thread&amp;area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="java.lang.ClassNotFoundException: org.hibernate.service.jta.platform.spi.JtaPlatform">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+java.lang.ClassNotFoundException: org.hibernate.service.jta.platform.spi.JtaPlatform
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+2 comments
+</li>
+<li class="time">6 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.mkyong.com%2Fhibernate%2Fjava-lang-classnotfoundexception-org-hibernate-service-jta-platform-spi-jtaplatform%2F%3A9mx37fyOx9xf29KsiyrdbyAcQ1k&amp;imp=51nhicl3iun184&amp;prev_imp&amp;forum_id=2673082&amp;forum=mkyong&amp;thread_id=1978021126&amp;major_version=metadata&amp;thread=2706910943&amp;zone=thread&amp;area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">amine</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">thank man</span></p>
+</a>
+
+</li>
+</ul>
+</section>
+
+</div>
+</div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" placeholder="yourname@email.com" type="email"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=mkyong&amp;utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+<li class="privacy">
+<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&amp;utm_medium=embed-footer&amp;utm_content=privacy-btn" target="_blank">
+<i aria-hidden="true" class="icon-privacy"></i>
+<span class="clip">Privacy</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

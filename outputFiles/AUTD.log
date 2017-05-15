@@ -1,0 +1,2 @@
+Following error occured when Parmchk was being executed:
+Cannot run program "chmod": CreateProcess error=2, The system cannot find the file specified

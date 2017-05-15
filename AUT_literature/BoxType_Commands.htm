@@ -1,0 +1,2272 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>
+Commands
+</title></head><body background="BoxType_Commands_files/paper.gif">
+<h2><a name="sh-5.9">Commands</a></h2>
+<p>
+The following is a description of the commands that can be accessed using
+the command line interface in tLEAP, or through the command line editor in
+xLEAP.  Whenever an argument in a command line definition is enclosed in
+brackets ([arg]), then that argument is optional.  When examples are shown,
+the command line is prefaced by "&gt; ", and the program output is shown
+without this character preface.
+</p><p>
+</p><p></p><h3><a name="sh-5.9.1">add</a></h3>
+
+<p></p><dl><dt></dt><dd><code>add a b</code>
+<dl><dd>UNIT/RESIDUE/ATOM  <i>a,b</i><br>
+
+</dd></dl>Add the object <i>b</i> to the object <i>a</i>. 
+This command is used to place ATOMs within
+RESIDUEs, and RESIDUEs within UNITs.
+This command will work only if <i>b</i> is not contained 
+by any other object.
+</dd><dt></dt><dd>The following example illustrates both the <code>add</code> command 
+and the way the tip3p water molecule 
+is created for the LEAP distribution tape.
+<p>
+</p><dl><dd>&gt; h1 = createAtom H1 HW  0.417  <br>
+&gt; h2 = createAtom H2 HW  0.417 <br>
+&gt; o  = createAtom O  OW -0.834  <br>
+&gt;  <br>
+&gt; set h1 element H  <br>
+&gt; set h2 element H  <br>
+&gt; set o  element O  <br>
+&gt;   <br>
+&gt; r = createResidue TIP3  <br>
+&gt; add r h1  <br>
+&gt; add r h2  <br>
+&gt; add r o  <br>
+&gt;   <br>
+&gt; bond h1 o  <br>
+&gt; bond h2 o  <br>
+&gt; bond h1 h2  <br>
+&gt;   <br>
+&gt; TIP3 = createUnit TIP3  <br>
+&gt;   <br>
+&gt; add TIP3 r  <br>
+&gt; set TIP3.1 restype solvent  <br>
+&gt; set TIP3.1 imagingAtom TIP3.1.O  <br>
+&gt;   <br>
+&gt; zMatrix TIP3 {  <br>
+&gt;       { H1 O 0.9572 }  <br>
+&gt;       { H2 O H1 0.9572 104.52 }  <br>
+&gt; }  <br>
+&gt;   <br>
+&gt; saveOff TIP3 water.lib  <br>
+Saving TIP3.  <br>
+Building topology.  <br>
+Building atom parameters.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.2">addAtomTypes</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addAtomTypes { { type element hybrid } { ... } ... }</code>
+<dl><dd>STRING	type<br>
+STRING	element<br>
+STRING	hybrid<br>
+
+</dd></dl>Define element and hybridization for force field
+atom types. This command for the standard force
+fields can be seen in the default <code>leaprc</code>
+files. The STRINGs are most safely rendered using
+quotation marks. If atom types are not defined,
+confusing messages about hybridization can result
+when loading PDB files.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.3">addIons</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addIons unit ion1 numIon1 [ion2 numIon2]</code>
+<dl><dd>UNIT	unit<br>
+UNIT	ion1<br>
+NUMBER	numIon1<br>
+UNIT	ion2<br>
+NUMBER	numIon2<br>
+
+</dd></dl>Adds counterions in a shell around <i>unit</i> 
+using a Coulombic potential on a grid. If 
+<i>numIon1</i> is 0, then the <i>unit</i> is 
+neutralized.  In this case, <i>numIon1</i> must be
+opposite in charge to <i>unit</i> and <i>numIon2</i> 
+cannot be specified. Otherwise, the specified 
+numbers of <i>numIon1 numIon2</i> are 
+If solvent is present, it is ignored in the charge and steric calculations,
+and if an ion has a steric conflict with a solvent molecule, the ion is
+moved to the center of said molecule, and the latter is deleted. (To
+avoid this behavior, either solvate _after_ addions, or use addIons2.)
+Ions must be monoatomic. 
+This procedure is not guaranteed to globally 
+minimize the electrostatic energy. When neutralizing
+regular-backbone nucleic acids, the first cations 
+will generally be placed between phosphates, leaving 
+the final two ions to be placed somewhere around
+the middle of the molecule.The default grid 
+resolution is 1 �, extending from an inner radius
+of ( ( maxIonVdwRadius + maxSoluteAtomVdwRadius ) ) 
+to an outer radius 4 angstroms beyond. A distance-dependent 
+dielectric is used for speed. 
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.4">addIons</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addIons unit ion1 numIon1 [ion2 numIon2]</code>
+<dl><dd>UNIT	unit<br>
+UNIT	ion1<br>
+NUMBER	numIon1<br>
+UNIT	ion2<br>
+NUMBER	numIon2<br>
+
+</dd></dl>Same as addIons, except solvent and solute are treated the same.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.5">addPath</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addPath path</code>
+<dl><dd>STRING	path<br>
+
+</dd></dl>Add the directory in <i>path</i> to the list of directories that
+are searched for files specified by other commmands.
+The following example illustrates this command.
+<p>
+</p><dl><dd>&gt; addPath /disk/howard <br>
+/disk/howard added to file search path.<br>
+
+</dd></dl><p>
+After the above command is entered, the program will search 
+for a file in this directory if a file is specified in 
+a command.  Thus, if a user has a library named 
+"/disk/howard/rings.lib" and the user wants to load that 
+library, one only needs to enter load rings.lib and not load 
+/disk/howard/rings.lib.
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.6">addPdbAtomMap</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addPdbAtomMap list</code>
+<dl><dd>LIST	list<br>
+
+</dd></dl>The atom Name Map is used to try to map atom names read from PDB files 
+to atoms within residue UNITs when the atom name in the PDB file does
+not match an atom in the residue.  This enables PDB files to be read
+in without extensive editing of atom names.  
+Typically, this command is placed in 
+the LEAP start-up file, "leaprc", so that 
+assignments are made at the beginning of the 
+session.  The LIST is a LIST of LISTs.  
+Each sublist contains  two entries to 
+add to the Name Map.  Each entry has the form:
+<p>
+</p><dl><dd>{ string string }<br>
+
+</dd></dl><p>
+where the first <i>string</i> is the name within the PDB file, 
+and the second <i>string is the name in the residue UNIT.
+</i></p><p><i>
+</i></p><p></p></dd></dl><h3><a name="sh-5.9.7">addPdbResMap</a></h3>
+
+<p></p><dl><dt></dt><dd><code>addPdbResMap list</code>
+<dl><dd>LIST	list<br>
+
+</dd></dl>The Name Map is used to map RESIDUE names 
+read from PDB files to variable names within 
+LEAP.  Typically, this command is placed in 
+the LEAP start-up file, "leaprc", so that 
+assignments are made at the beginning of the 
+session.  The LIST is a LIST of LISTs.  
+Each sublist contains  two or three entries to 
+add to the Name Map.  Each entry has the form:
+<p>
+</p><dl><dd>{ double string string }<br>
+
+</dd></dl><p>
+where <i>double</i> can be 0 or 1, the first 
+string is the name within the PDB file, 
+and the second string is the variable 
+name to which the first string will be 
+mapped.  To illustrate, the following is 
+part of the Name Map that exists when LEAP 
+is started from the "leaprc" file included in the 
+distribution tape:
+</p><p>
+</p><dl><dd>  ADE  --&gt;  DADE<br>
+  :  :<br>
+ 0 ALA  --&gt;  NALA<br>
+ 0 ARG  --&gt;  NARG<br>
+    :  :<br>
+ 1 ALA  --&gt;  CALA<br>
+ 1 ARG  --&gt;  CARG<br>
+    :  :<br>
+ 1 VAL  --&gt;  CVAL<br>
+
+</dd></dl><p>
+Thus, the residue <code>ALA</code> will be mapped to 
+<code>NALA</code> if it is the N-terminal residue 
+and <code>CALA</code> if it is found at the C-terminus.  
+The above Name Map was produced using the following 
+(edited) command line:
+</p><p>
+</p><dl><dd>&gt; addPdbResMap {<br>
+&gt; { 0 ALA NALA }  { 1 ALA CALA }<br>
+&gt; { 0 ARG NARG } { 1 ARG CARG }<br>
+          :    :<br>
+&gt; { 0 VAL NVAL }  { 1 VAL CVAL }<br>
+&gt;<br>
+          :  :<br>
+&gt; { ADE DADE }<br>
+          :  :<br>
+&gt; }<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.8">alias</a></h3>
+
+<p></p><dl><dt></dt><dd><code>alias [ string1 [ string2 ] ]</code>
+<dl><dd>STRING	string1<br>
+STRING	string2<br>
+
+</dd></dl>This command will add or remove an entry to the Alias Table or 
+list entries in the Alias Table.  If both strings are present, 
+then string1 becomes the alias to string2, the 
+original command.  If only one string is used as an argument, 
+then this string is removed from the Alias Table.  If no 
+arguments are given with the command, the current aliases stored 
+in the Alias Table will be listed.
+<p>
+The proposed alias is first checked for conflict with the 
+LEAP commands and it is rejected if a conflict is found.  
+A proposed alias will replace an existing alias with a warning 
+being issued.  The alias can stand for more than a single word, 
+but also as an entire string so the user can 
+quickly repeat entire lines of input.
+</p><p>
+The leaprc file that is found in the LEAP distribution tape 
+creates the following aliases:
+</p><p>
+</p><dl><dd>q 	 quit<br>
+exit	 quit<br>
+e 	 edit<br>
+a 	 alias<br>
+? 	 help<br>
+l 	 loadOff<br>
+lp 	 loadPdb<br>
+so 	 saveOff<br>
+sap 	 saveAmberParm<br>
+sp 	 savePdb<br>
+ap 	 loadAmberParams<br>
+lap 	 loadAmberPrep<br>
+ai 	 addIons<br>
+s 	 source<br>
+
+</dd></dl><p>
+The following line is an example of this command:
+</p><p>
+</p><dl><dd>&gt; alias q quit<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.9">alignAxes</a></h3>
+
+<p></p><dl><dt></dt><dd><code>alignAxes unit</code>
+<dl><dd>UNIT	unit<br>
+
+</dd></dl>Translate the geometric center of <i>unit to the origin 
+and align the principle axes of the ATOMs within </i><i>unit</i>
+along the coordinate axes.  This is done by calculating the 
+moment of inertia of the UNIT using the identical mass 
+for each ATOM, and then diagonalizing the resulting 
+matrix and aligning the eigenvectors along the coordinate 
+axes.  This command modifies the coordinates of the UNIT.
+<p>
+The following example illustrates the alignAxes command.  
+For the purposes of this manual, the CA ATOM 
+of the all_amino94.lib UNIT GLY is described.  The 
+user should note the change in the CA 
+Cartesian coordinates after alignment.
+</p><p>
+</p><dl><dd>&gt; desc GLY.GLY.CA <br>
+ATOM <br>
+Name:    CA    <br>
+Type:    CT    <br>
+Charge:  0.035 <br>
+Element: C     <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 3.970048, 2.845795, 0.000000 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<gly 1="">.A<n 1=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<ha2 4=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<ha3 5=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<c 6=""> by a single bond. <br>
+&gt; alignAxes GLY <br>
+&gt; desc GLY.GLY.CA <br>
+ATOM <br>
+Name:    CA    <br>
+Type:    CT    <br>
+Charge:  0.035 <br>
+Element: C     <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 0.124598, 0.610835, 0.000000 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<gly 1="">.A<n 1=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<ha2 4=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<ha3 5=""> by a single bond. <br>
+  Bonded to .R<gly 1="">.A<c 6=""> by a single bond.<br>
+
+</c></gly></ha3></gly></ha2></gly></n></gly></c></gly></ha3></gly></ha2></gly></n></gly></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.10">bond</a></h3>
+
+<p></p><dl><dt></dt><dd><code>bond atom1 atom2 [ order ]</code>
+<dl><dd>ATOM	atom1<br>
+ATOM	atom2<br>
+STRING	order<br>
+
+</dd></dl>Create a bond between atom1 and atom2. Both of 
+these ATOMs must be contained by the same UNIT. By 
+default, the bond will be a single bond.  By specifying
+"-", "=", "#", or ":" as the optional argument, 
+<i>order</i>, the user can specify a single, double, 
+triple, or aromatic bond, respectively.  (See the 
+<i>add</i> command for an example of the <i>bond command.)
+</i><p><i>
+</i></p><p></p></dd></dl><h3><a name="sh-5.9.11">bondByDistance</a></h3>
+
+<p></p><dl><dt></dt><dd><code>bondByDistance container [ maxBond ]</code>
+<dl><dd>CONT	container<br>
+NUMBER	maxBond<br>
+
+</dd></dl>Create single bonds between all ATOMs 
+in container that are within maxBond 
+angstroms of each other.  If maxBond is 
+not specified then a default distance will be used.
+This command is especially useful in building 
+molecules.  Example:
+<p>
+</p><dl><dd>bondByDistance alkylChain<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.12">center</a></h3>
+
+<p></p><dl><dt></dt><dd><code>center container</code>
+<dl><dd>UNIT/RESIDUE/ATOM	container<br>
+
+</dd></dl>Display the coordinates of the geometric center of 
+the ATOMs within container.  In the 
+following example, the alanine UNIT found in the amino 
+acid library has been examined by the center command:
+<p>
+</p><dl><dd>&gt; center ALA<br>
+The center is at: 4.04, 2.80, 0.49 <br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.13">charge</a></h3>
+
+<p></p><dl><dt></dt><dd><code>charge container</code>
+<dl><dd>UNIT/RESIDUE/ATOM	container<br>
+
+</dd></dl>This command calculates the total charge of the ATOMs within
+container.  The total charges for both standard and, 
+where applicable, perturbed systems are displayed.  In 
+the following example, the alanine UNIT found in the 
+amino acid library has been examined by the charge 
+command:
+<p>
+</p><dl><dd>&gt; charge ALA <br>
+Total unperturbed charge: 0.00 <br>
+Total perturbed charge:   0.00<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.14">check</a></h3>
+
+<p></p><dl><dt></dt><dd><code>check unit [ parms ]</code>
+<dl><dd>UNIT	unit<br>
+PARMSET	parms<br>
+
+</dd></dl>This command can be used to check the UNIT for 
+internal inconsistencies that could cause 
+problems when performing calculations.  This is a 
+very useful command that should be used before a UNIT is saved 
+with <i>saveAmberParm or its variants. Currently it checks for the 
+following possible problems:
+</i><p><i>
+</i></p><p></p><ul><li>	long bonds
+</li><li>	short bonds
+</li><li>	non-integral total charge of the UNIT.
+</li><li>	missing force field atom types
+</li><li>	close contacts (&lt; 1.5 �) between nonbonded ATOMs.  
+<p>
+The user may collect any missing molecular mechanics 
+parameters in a PARMSET for subsequent 
+editing.  In the following example, the alanine 
+UNIT found in the amino acid 
+library has been examined by the <i>check command:
+</i></p><p><i>
+</i></p><dl><dd><i>&gt; check ALA <br>
+Checking 'ALA'.... <br>
+Checking parameters for unit 'ALA'. <br>
+Checking for bond parameters. <br>
+Checking for angle parameters. <br>
+Unit is OK.<br>
+
+</i></dd></dl><p>
+</p><p></p></li></ul></dd></dl><h3><a name="sh-5.9.15">clearPdbAtomMap</a></h3>
+
+<p></p><dl><dt></dt><dd>Clear the atom Name Map (see the <code>addPdbAtomMap</code> command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.16">clearPdbResMap</a></h3>
+
+<p></p><dl><dt></dt><dd>Clear the residue Name Map (see the <code>addPdbResMap</code> command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.17">clearVariables</a></h3>
+
+<p></p><dl><dt></dt><dd><code>clearVariables [ list ]</code>
+<dl><dd>LIST	list<br>
+
+</dd></dl>This command removes variables from LEAP. If the 
+list argument is provided then only the variables 
+in the LIST will be removed. If no argument is 
+provided then all variables will be removed.
+Example:
+<p>
+</p><dl><dd>&gt; addPath /disk/howard/LeapTests/Ethane <br>
+/disk/howard/LeapTests/Ethane added to file search path. <br>
+&gt; loadOff ETH.lib <br>
+Loading library: ETH.lib <br>
+Loading: ETH <br>
+&gt; list <br>
+ETH <br>
+&gt; desc ETH <br>
+UNIT name: ETH <br>
+Head atom: null <br>
+Tail atom: null <br>
+Contents:  <br>
+R<eth 1=""> <br>
+&gt; clearVariables { ETH } <br>
+&gt; list <br>
+&gt; desc ETH <br>
+"ETH"<br>
+
+</eth></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.18">combine</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = combine  list</code>
+<dl><dd>object	variable<br>
+LIST	list<br>
+
+</dd></dl>Combine the contents of the UNITs within list into 
+a single UNIT. The new UNIT is placed in variable. 
+This command is similar to the <i>sequence</i> command 
+except it does not link the ATOMs of the 
+UNITs together.  In the following example, the input 
+and output should be compared with the example 
+given for the <i>sequence</i> command.
+<p>
+</p><dl><dd>&gt; tripeptide = combine { ALA GLY PRO } <br>
+Sequence: ALA <br>
+Sequence: GLY <br>
+Sequence: PRO <br>
+&gt; desc tripeptide <br>
+UNIT name: ALA     !! bug: this should be tripeptide!<br>
+Head atom: .R<ala 1="">.A<n 1=""> <br>
+Tail atom: .R<pro 3="">.A<c 13=""> <br>
+Contents:  <br>
+R<ala 1=""> <br>
+R<gly 2=""> <br>
+R<pro 3=""> <br>
+
+</pro></gly></ala></c></pro></n></ala></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.19">copy</a></h3>
+
+<p></p><dl><dt></dt><dd><code>newvariable = copy  variable</code>
+<dl><dd>object	newvariable<br>
+object	variable<br>
+
+</dd></dl>Creates an exact duplicate of the object variable.  
+Since newvariable is not pointing to the same 
+object as variable, changing the contents of one 
+object will not alter the other object.  Example:
+<p>
+</p><dl><dd>&gt; tripeptide = sequence { ALA GLY PRO } <br>
+&gt; tripeptideSol = copy tripeptide <br>
+&gt; solvateBox tripeptideSol WATBOX216 8 2<br>
+
+</dd></dl><p>
+In the above example, tripeptide is a separate object 
+from tripeptideSol and is not solvated.  Had 
+the user instead entered
+</p><p>
+</p><dl><dd>&gt; tripeptide = sequence { ALA GLY PRO } <br>
+&gt; tripeptideSol = tripeptide <br>
+&gt; solvateBox tripeptideSol WATBOX216 8 2<br>
+
+</dd></dl><p>
+then both tripeptide and tripeptideSol would be 
+solvated since they would both point to the same 
+object.
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.20">createAtom</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = createAtom  name type charge</code>
+<dl><dd>ATOM	variable<br>
+STRING	name<br>
+STRING	type<br>
+NUMBER	charge<br>
+
+</dd></dl>Return a new and empty ATOM with name, 
+type, and charge as its atom name, 
+atom type, and electrostatic point charge.
+(See the <i>add</i> command for an example of 
+the <i>createAtom</i> command.)
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.21">createParmset</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = createParmset  name</code>
+<dl><dd>PARMSET	variable<br>
+STRING	name<br>
+
+</dd></dl>Return a new and empty PARMSET with the 
+name "name".
+<p>
+</p><dl><dd>&gt; newparms = createParmset pertParms<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.22">createResidue</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = createResidue  name</code>
+<dl><dd>RESIDUE	variable<br>
+STRING	name<br>
+
+</dd></dl>Return a new and empty RESIDUE with 
+the name "name".  (See the 
+<i>add</i> command for an example 
+of the <i>createResidue</i> command.)
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.23">createUnit</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = createUnit  name</code>
+<dl><dd>UNIT	variable<br>
+STRING	name<br>
+
+</dd></dl>Return a new and empty UNIT  with the name 
+"name".  (See the <i>add</i> command for an example of 
+the <i>createUnit</i> command.)
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.24">crossLink</a></h3>
+
+<p></p><dl><dt></dt><dd><code>crossLink res1 conn1 res2 conn2 [ order ]</code>
+<dl><dd>RESIDUE	res1<br>
+STRING	connect1<br>
+RESIDUE	res2<br>
+STRING	connect2<br>
+STRING	order<br>
+
+</dd></dl>Create a bond between ATOMs at the connection point 
+specified by conn1 and conn2.  The user may 
+also specify the bond order of the crosslink through 
+the order option.  By specifying "-", "=",
+"#", or ":" as the optional argument, order, 
+the user can specify a single, double, triple, or 
+aromatic bond, respectively.    The arguments 
+conn1 and conn2
+can have the following values:
+<p>
+</p><dl><dd>Name	Alternative Names<br>
+connect0	nend firstend<br>
+connect1	cend lastend<br>
+connect2	send disulphide<br>
+connect3	-<br>
+connect4	-<br>
+connect5	- <br>
+
+</dd></dl><p>
+Example:
+</p><p>
+</p><dl><dd>&gt; disulfide = sequence {<br>
+&gt;    ALA CYX ALA ALA ALA ALA CYX ALA<br>
+&gt; }<br>
+&gt; crosslink disulfide.2 connect2 disulfide.7 connect2<br>
+&gt; desc disulfide.2.8<br>
+ATOM<br>
+Name:    SG   <br>
+Type:    S    <br>
+Charge:  0.824<br>
+Element: S    <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld- <br>
+Atom position: 9.992386, 3.049907, -1.366045<br>
+Atom velocity: 0.000000, 0.000000, 0.000000<br>
+  Bonded to .R<cyx 2="">.A<cb 5=""> by a single bond.<br>
+  Bonded to .R<cyx 2="">.A<lp1 9=""> by a single bond.<br>
+  Bonded to .R<cyx 2="">.A<lp2 10=""> by a single bond.<br>
+  Bonded to .R<cyx 7="">.A<sg 8=""> by a single bond.<br>
+
+</sg></cyx></lp2></cyx></lp1></cyx></cb></cyx></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.25">debugOff</a></h3>
+
+<p></p><dl><dt></dt><dd><code>debugOff filename</code>
+<dl><dd>STRING	filename<br>
+
+</dd></dl>This command is a system debugging function. It turns off 
+debugging messages from the source file filename.  
+The default for all filenames is OFF.  Command example:
+<p>
+</p><dl><dd>&gt; debugoff /disk/howard/debug <br>
+Messages will be displayed from the files: <br>
+------ <br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.26">debugOn</a></h3>
+
+<p></p><dl><dt></dt><dd><code>debugOn filename</code>
+<dl><dd>STRING	filename<br>
+
+</dd></dl>This command is a system debugging function. It turns on debugging 
+messages from the source file filename.  The default for all 
+filenames is OFF.  Example:
+<p>
+</p><dl><dd>&gt; debugon /disk/howard/debug<br>
+Messages will be displayed from the files:<br>
+/disk/howard/debug<br>
+------ <br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.27">debugStatus</a></h3>
+
+<p></p><dl><dt></dt><dd><code>debugStatus [memory]</code>
+<dl><dd>STRING	memory<br>
+
+</dd></dl>This command is a system debugging command.  It displays 
+various messages that describe LEAP's usage of system 
+resources.  The optional string, memory, can have 
+the following values:
+<p>
+</p><dl><dd>testMemoryOn 	 Turn memory testing on<br>
+testMemoryOff 	 Turn memory testing off <br>
+
+</dd></dl><p>
+Command example:
+</p><p>
+</p><dl><dd>&gt; debugstatus <br>
+Current memory usage: 0 bytes <br>
+Memory testing on = FALSE<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.28">deleteBond</a></h3>
+
+<p></p><dl><dt></dt><dd><code>deleteBond atom1 atom2</code>
+<dl><dd>ATOM	atom1<br>
+ATOM	atom2<br>
+
+</dd></dl>Delete the bond between the ATOMs atom1 and 
+atom2. If no bond exists, an error will be 
+displayed.
+<p>
+</p><dl><dd>&gt; dipeptide = sequence { ALA GLY } <br>
+Sequence: ALA <br>
+Sequence: GLY <br>
+Joining ALA - GLY <br>
+&gt; desc dipeptide.1 <br>
+RESIDUE name: ALA <br>
+RESIDUE sequence number: 1 <br>
+Type: protein <br>
+Connection atoms: <br>
+ Connect atom 0: A<n 1=""> <br>
+ Connect atom 1: A<c 9=""> <br>
+Contents:  <br>
+A<o 10=""><br>
+A<c 9=""><br>
+A<hb3 8=""><br>
+A<hb2 7=""><br>
+A<hb1 6=""><br>
+A<cb 5=""><br>
+A<ha 4=""><br>
+A<ca 3=""><br>
+A<h 2=""><br>
+A<n 1=""><br>
+&gt; desc dipeptide.1.9 <br>
+ATOM <br>
+Name:    C     <br>
+Type:    C     <br>
+Charge:  0.616 <br>
+Element: C     <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 5.485541, 2.705207, -0.000004 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<ala 1="">.A<ca 3=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<o 10=""> by a single bond. <br>
+  Bonded to .R<gly 2="">.A<n 1=""> by a single bond. <br>
+&gt; deleteBond dipeptide.1.9 dipeptide.2.1 <br>
+&gt; desc dipeptide.1.9 <br>
+ATOM <br>
+Name:    C     <br>
+Type:    C     <br>
+Charge:  0.616 <br>
+Element: C     <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 5.485541, 2.705207, -0.000004 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<ala 1="">.A<ca 3=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<o 10=""> by a single bond.<br>
+
+</o></ala></ca></ala></n></gly></o></ala></ca></ala></n></h></ca></ha></cb></hb1></hb2></hb3></c></o></c></n></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.29">deleteOffLibEntry</a></h3>
+
+<p></p><dl><dt></dt><dd><code>deleteOffLibEntry library entry</code>
+<dl><dd>STRING	library<br>
+STRING	entry<br>
+
+</dd></dl>Delete the entry from the library.
+<p>
+</p><dl><dd>&gt; loadOff ETH.lib <br>
+Loading library: ETH.lib <br>
+Loading: ETH <br>
+&gt; listOff ETH.lib <br>
+Index of library: ETH.lib <br>
+ETH <br>
+&gt; deleteOffLibEntry ETH.lib ETH <br>
+ETH was removed. <br>
+&gt; listOff ETH.lib <br>
+Index of library: ETH.lib<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.30">deleteRestraint</a></h3>
+
+<p></p><dl><dt></dt><dd><code>deleteRestraint unit a b [ c [ d ] ]</code>
+<dl><dd>UNIT	unit<br>
+ATOM	a<br>
+ATOM	b<br>
+ATOM	c<br>
+ATOM	d<br>
+
+</dd></dl>Delete a restraint bond, angle, or torsion from 
+unit, depending on the number of ATOMs 
+specified.  (see the <i>restrainBond</i> 
+command for an example of this command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.31">desc</a></h3>
+
+<p></p><dl><dt></dt><dd><code>desc variable</code>
+<dl><dd>object	variable<br>
+
+</dd></dl>Print a description of the object.  In the following 
+example, the alanine UNIT found in the amino 
+acid library has been examined by the <i>desc</i> command:
+<p>
+</p><dl><dd>&gt; desc ALA <br>
+UNIT name: ALA <br>
+Head atom: .R<ala 1="">.A<n 1=""> <br>
+Tail atom: .R<ala 1="">.A<c 9=""> <br>
+Contents: <br>
+R<ala 1=""><br>
+
+</ala></c></ala></n></ala></dd></dl><p>
+Now, the <i>desc</i> command is used to examine the 
+first residue (1) of the alanine UNIT:
+</p><p>
+</p><dl><dd>&gt; desc ALA.1 <br>
+RESIDUE name: ALA <br>
+RESIDUE sequence number: 1 <br>
+Type: protein <br>
+Connection atoms: <br>
+Connect atom 0: A<n 1=""> <br>
+Connect atom 1: A<c 9=""> <br>
+Contents: <br>
+A<n 1=""> <br>
+A<hn 2=""> <br>
+A<ca 3=""> <br>
+A<ha 4=""> <br>
+A<cb 5=""> <br>
+A<hb1 6=""> <br>
+A<hb2 7=""> <br>
+A<hb3 8=""> <br>
+A<c 9=""> <br>
+A<o 10=""><br>
+
+</o></c></hb3></hb2></hb1></cb></ha></ca></hn></n></c></n></dd></dl><p>
+Next, we illustrate the desc command by examining 
+the ATOM <i>n</i> of the first residue 
+(1) of the alanine UNIT:
+</p><p>
+</p><dl><dd>&gt; desc ALA.1.N <br>
+ATOM <br>
+Name:    N <br>
+Type:    N <br>
+Charge:  -0.463 <br>
+Element: N <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int - nmin- nbld- <br>
+Atom position: 3.325770, 1.547909, -0.000002 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+Bonded to .R<ala 1="">.A<hn 2=""> by a single bond. <br>
+Bonded to .R<ala 1="">.A<ca 3=""> by a single bond.<br>
+
+</ca></ala></hn></ala></dd></dl><p>
+Since the n ATOM is also the first 
+atom of the ALA residue, the following 
+command will give the same output as the 
+previous example:
+</p><p>
+</p><dl><dd>&gt; desc ALA.1.1 <br>
+ATOM <br>
+Name:    N <br>
+Type:    N <br>
+Charge:  -0.463 <br>
+Element: N <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int - nmin- nbld- <br>
+Atom position: 3.325770, 1.547909, -0.000002 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+Bonded to .R<ala 1="">.A<hn 2=""> by a single bond. <br>
+Bonded to .R<ala 1="">.A<ca 3=""> by a single bond.<br>
+
+</ca></ala></hn></ala></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.32">deSelect</a></h3>
+
+<p></p><dl><dt></dt><dd><code>deSelect object</code>
+<dl><dd>CONT	object<br>
+
+</dd></dl>Clears the select flag on all ATOMs  
+within object.  (see the <i>select</i> 
+command for additional information.)
+<p>
+</p><dl><dd>&gt; deSelect ALA.1.5<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.33">displayPdbAtomMap</a></h3>
+
+<p></p><dl><dt></dt><dd>Display the atom Name Map (see the <i>addPdbAtomMap</i> command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.34">displayPdbResMap</a></h3>
+
+<p></p><dl><dt></dt><dd>Display the residue Name Map (see the <i>addPdbResMap</i> command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.35">edit</a></h3>
+
+<p></p><dl><dt></dt><dd><code>edit unit</code>
+<dl><dd>UNIT	unit<br>
+
+</dd></dl>In xleap this command creates a Unit Editor that 
+contains the UNIT unit. The user can 
+view and edit the contents of the UNIT using the mouse. 
+The command causes a copy of the object to 
+be edited.  If the object that the user wants to 
+edit is "null", then the edit command assumes that 
+the user wants to edit a new UNIT with a 
+single RESIDUE within it.  In tleap this 
+command prints an error message.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.36">groupSelectedAtoms</a></h3>
+
+<p></p><dl><dt></dt><dd><code>groupSelectedAtoms unit name</code>
+<dl><dd>UNIT	unit<br>
+STRING	name<br>
+
+</dd></dl>Create a group within unit with the name, 
+"name", using all of the ATOMs within 
+the UNIT that are selected.  If the group has 
+already been defined then
+overwrite the old group.  The <i>desc</i> 
+command can be used to list groups.
+Example:
+<p>
+</p><dl><dd>groupSelectedAtoms TRP sideChain<br>
+
+</dd></dl><p>
+An expression like "TRP@sideChain" returns a 
+LIST, so any commands that require LIST 's can 
+take advantage of this notation.  After 
+assignment, one can access groups using the "@" 
+notation.  Examples:
+</p><p>
+</p><dl><dd>select TRP@sideChain<br>
+
+</dd></dl><p>
+</p><dl><dd>center TRP@sideChain<br>
+
+</dd></dl><p>
+The latter example will calculate the center 
+of the atoms in the "sideChain" group.  
+(see the <i>select</i> command for a more 
+detailed example.)
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.37">help</a></h3>
+
+<p></p><dl><dt></dt><dd><code>help [string]</code>
+<dl><dd>STRING	string<br>
+
+</dd></dl>This command prints a description of the command in 
+string. If the STRING is not given then 
+a list of help topics is provided.
+This command is illustrated with the following 
+example:
+<p>
+</p><dl><dd>&gt; help quit <br>
+    quit <br>
+Quit LEaP.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.38">impose</a></h3>
+
+<p></p><dl><dt></dt><dd><code>impose unit seqlist internals</code>
+<dl><dd>UNIT	unit<br>
+LIST	seqlist<br>
+LIST	internals<br>
+
+</dd></dl>The impose command allows the user to impose 
+internal coordinates on the UNIT. The list of 
+RESIDUEs to impose the internal coordinates 
+upon is in seqlist. The internal coordinates 
+to impose are in the LIST internals. 
+<p>
+The command works by looking into each 
+RESIDUE within the UNIT that is listed 
+in the seqlist argument and attempts 
+to apply each of the internal coordinates 
+within internals. The seqlist 
+argument is a LIST of NUMBERS that represent 
+sequence numbers or ranges of sequence numbers. 
+Ranges of sequence numbers are represented 
+by two element LISTs that contain the first 
+and last sequence number in the range. The user 
+can specify sequence number ranges
+that are larger than what is found in the UNIT. 
+For example, the range { 1 999 } represents 
+all RESIDUEs in a 200 RESIDUE UNIT.
+</p><p>
+The internals argument is a LIST of LISTs. 
+Each sublist contains a sequence of ATOM names 
+which are of type STRING followed by the 
+value of the internal coordinate. An example of the 
+impose command would be:
+</p><p>
+</p><dl><dd>impose peptide { 1 2 3 } { <br>
+{ N CA C N -40.0 } <br>
+{ C N CA C -60.0 } <br>
+}<br>
+
+</dd></dl><p>
+This would cause the RESIDUE with sequence 
+numbers 1, 2, and 3 within the 
+UNIT peptide to 
+assume an alpha helical conformation.  The command
+</p><p>
+</p><dl><dd>impose peptide { 1 2 { 5 10 } 12 } {<br>
+ { CA CB 5.0 } }<br>
+
+</dd></dl><p>
+will impose on the residues with sequence numbers 
+1, 2, 5, 6, 
+7, 8, 9, 10, and 12 
+within the UNIT peptide a bond length of 5.0 
+angstroms between the alpha and beta carbons. RESIDUEs without
+an ATOM named CB (like glycine) will be unaffected.
+</p><p>
+Three types of conformational change are supported: 
+bond length changes, bond angle 
+changes, and torsion angle changes. If the 
+conformational change involves a torsion angle, 
+then all dihedrals around the central pair of 
+atoms are rotated. The entire list of internals are 
+applied to each RESIDUE.
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.39">list</a></h3>
+
+<p></p><dl><dt></dt><dd>List all of the variables currently defined.
+To illustrate, the following (edited) output 
+shows the variables defined when LEAP is 
+started from the leaprc file included in 
+the distribution tape:
+<p>
+</p><dl><dd>&gt; list<br>
+A<br>
+ACE 	 ALA<br>
+ARG 	 ASN<br>
+ : 	 :<br>
+VAL 	 W<br>
+WAT 	 Y<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.40">listOff</a></h3>
+
+<p></p><dl><dt></dt><dd><code>listOff library</code>
+<dl><dd>STRING	library<br>
+
+</dd></dl>List the UNITs/PARMSETs that are stored 
+within the library.  Command example:
+<p>
+</p><dl><dd>&gt; listOff all_amino94.lib<br>
+Index of library: all_amino94.lib<br>
+ALA <br>
+ARG <br>
+ASH<br>
+ASN <br>
+ASP <br>
+CYM<br>
+CYS <br>
+CYX <br>
+GLN <br>
+GLU <br>
+GLY <br>
+HID <br>
+HIE <br>
+HIP <br>
+ILE <br>
+LEU <br>
+LYS <br>
+MET <br>
+PHE <br>
+PRO <br>
+SER <br>
+THR <br>
+TRP <br>
+TYR <br>
+VAL<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.41">loadAmberParams</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = loadAmberParams  filename</code>
+<dl><dd>PARMSET	variable<br>
+STRING	filename<br>
+
+</dd></dl>Load an AMBER format parameter set file and place it in variable. 
+All interactions defined in the parameter set 
+will be contained within variable. This 
+command causes the loaded parameter set to be included 
+in LEAP 's list of parameter sets that are searched when 
+parameters are required.  General proper and 
+improper torsion parameters are 
+modified during the command execution with the LEAP general
+type "?" replacing the AMBER general type "X".
+<p>
+The LEAP distribution contains "old" and "new" AMBER 
+force field parameters in files "parm91X.dat" and "parm94.dat".  
+One could build OFF libraries using the commands shown below;
+at some point this may become a standard conversion, but since
+it is easier to maintain the parameters in the AMBER format,
+this procedure is not used in the default setup. "parm91X.dat"
+is used instead of the "parm91.dat" in the AMBER dat/ tree
+because this file has corrections for LEAP 's method of applying
+improper torsions.
+</p><p>
+</p><dl><dd>&gt; parm91 = loadAmberParams parm91X.dat<br>
+&gt; saveOff parm91 parm91.lib<br>
+Saving parm91.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.42">loadAmberPrep</a></h3>
+
+<p></p><dl><dt></dt><dd><code>loadAmberPrep filename [ prefix ]</code>
+<dl><dd>STRING	filename<br>
+STRING	prefix<br>
+
+</dd></dl>This command loads an AMBER PREP input file. For 
+each residue that is loaded, a new UNIT is constructed 
+that contains a single RESIDUE and a variable is created 
+with the same name as the name of the residue within the  
+PREP file. If the optional argument prefix is 
+provided it will be prefixed to each variable name; 
+this feature is used to prefix UATOM residues, 
+which have the same names as AATOM residues with 
+the string "U" to distinguish them.
+Let us imagine that the following AMBER PREP 
+input file exists:
+<p>
+</p><dl><dd>   0  0  2 <br>
+     Crown Fragment A <br>
+cra.res <br>
+CRA  INT 0 <br>
+CORRECT  NOMIT DU  BEG <br>
+0.0 <br>
+1  DUMM  DU M  0  0  0     0.      0.      0. <br>
+2  DUMM  DU M  0  0  0     1.000   0.      0. <br>
+3  DUMM  DU M  0  0  0     1.000  90.      0. <br>
+4  C1    CT M  0  0  0     1.540 112.    169. <br>
+5  H1A   HC E  0  0  0     1.098 109.47  -110.0 <br>
+6  H1B   HC E  0  0  0     1.098 109.47   110.0 <br>
+7  O2    OS M  0  0  0     1.430 112.    -72. <br>
+8  C3    CT M  0  0  0     1.430 112.    169. <br>
+9  H3A   HC E  0  0  0     1.098 109.47  -49.0 <br>
+10 H3B   HC E  0  0  0     1.098 109.47   49.0 <br>
+<p><br>
+CHARGE <br>
+ 0.2442  -0.0207  -0.0207  -0.4057  0.2442 <br>
+ -0.0207  -0.0207 <br>
+</p><p><br>
+DONE <br>
+STOP<br>
+
+</p></dd></dl><p>
+This fragment can be loaded into LEAP 
+using the following command:
+</p><p>
+</p><dl><dd>&gt; loadAmberPrep cra.in<br>
+Loaded UNIT: CRA<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.43">loadOff</a></h3>
+
+<p></p><dl><dt></dt><dd><code>loadOff filename</code>
+<dl><dd>STRING	filename<br>
+
+</dd></dl>This command loads the OFF library within the file 
+named filename. All UNITs and PARMSETs 
+within the library will be loaded. The objects 
+are loaded into LEAP under the variable names 
+the objects had when they were saved. Variables 
+already in existence that have the same 
+names as the objects being loaded will be overwritten.
+Any PARMSETs loaded using this command are included in 
+LEAP 's library of PARMSETs that is searched 
+whenever parameters are required (The old AMBER
+format is used for PARMSETs rather than the OFF 
+format in the default configuration).
+Example command line:
+<p>
+</p><dl><dd>&gt; loadOff parm91.lib <br>
+Loading library: parm91.lib <br>
+Loading: PARAMETERS<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.44">loadPdb</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = loadPdb filename</code>
+<dl><dd>STRING	filename<br>
+object	variable<br>
+
+</dd></dl>Load a Protein Databank format file with the 
+file name filename. The sequence numbers 
+of the RESIDUEs will be determined from the order of 
+residues within the PDB file ATOM records. 
+This function will search the variables currently 
+defined within LEAP for variable 
+names that map to residue names within the ATOM 
+records of the PDB file.  If a matching variable 
+name is found then the contents of the variable are 
+added to the UNIT that will contain the structure 
+being loaded from the PDB file. Adding the 
+contents of the matching UNIT into 
+the UNIT being constructed means that the contents 
+of the matching UNIT are copied into the UNIT 
+being built and that a bond is created between 
+the connect0 ATOM of the matching UNIT 
+and the connect1 ATOM of the UNIT being built. 
+The UNITs are combined in the same way UNITs are combined
+using the sequence command.
+As atoms are read from the ATOM records their 
+coordinates are written into the correspondingly 
+named ATOMs within the UNIT being built. If 
+the entire residue is read and it is found that 
+ATOM coordinates are missing, then external 
+coordinates are built from the internal coordinates 
+that were defined in the matching UNIT. 
+This allows LEAP to build coordinates for hydrogens and lone-pairs
+which are not specified in PDB files.
+<p>
+</p><dl><dd>&gt; crambin = loadPdb 1crn <br>
+Loading PDB file <br>
+Matching PDB residue names to LEaP variables. <br>
+Mapped residue THR, term: 0, seq. number: 0 to: NTHR. <br>
+Residue THR, term: M, seq. number: 1 was not<br>
+found in name map. <br>
+Residue CYS, term: M, seq. number: 2 was not<br>
+found in name map. <br>
+Residue CYS, term: M, seq. number: 3 was not<br>
+found in name map. <br>
+Residue PRO, term: M, seq. number: 4 was not<br>
+found in name map. <br>
+:               :               : <br>
+Residue TYR, term: M, seq. number: 43 was not<br>
+found in name map. <br>
+Residue ALA, term: M, seq. number: 44 was not<br>
+found in name map. <br>
+Mapped residue ASN, term: 1, seq. number: 45 to: CASN. <br>
+Joining NTHR - THR <br>
+Joining THR - CYS <br>
+Joining CYS - CYS <br>
+Joining CYS - PRO <br>
+:               :               : <br>
+Joining ASP - TYR <br>
+Joining TYR - ALA <br>
+Joining ALA - CASN<br>
+
+</dd></dl><p>
+The above edited listing shows the use of this command 
+to load a PDB file for the protein 
+Crambin.  Several disulphide bonds are present in the 
+protein and these bonds are indicated in 
+the PDB file.  The loadPdb command, however, 
+cannot read this information from the PDB 
+file.  It is necessary for the user to explicitly 
+define disulphide bonds using the <i>crossLink</i>
+command.
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.45">loadPdbUsingSeq</a></h3>
+
+<p></p><dl><dt></dt><dd><code>loadPdbUsingSeq filename unitlist</code>
+<dl><dd>STRING	filename<br>
+LIST	unitlist<br>
+
+</dd></dl>This command reads a Protein Data Bank format file 
+from the file named filename. This command is 
+identical to <i>loadPdb</i> except it does 
+not use the residue names within the PDB file. 
+Instead the sequence is defined by the user in unitlist.
+For more details see <i>loadPdb.
+<p>
+</p></i><dl><i></i><dd><i>&gt; peptSeq = { UALA UASN UILE UVAL UGLY } <br>
+&gt; pept = loadPdbUsingSeq pept.pdb peptSeq<br>
+
+</i></dd></dl><p>
+In the above example,  a variable is first  
+defined as a LIST of united atom RESIDUEs.  
+A PDB file is then loaded, in this sequence 
+order, from the file "pept.pdb".
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.46">logFile</a></h3>
+
+<p></p><dl><dt></dt><dd><code>logFile filename</code>
+<dl><dd>STRING	filename<br>
+
+</dd></dl>This command opens the file with the file 
+name filename as a log file. User input and 
+all output is written to the log file. Output is 
+written to the log file as if the verbosity level 
+were set to 2.
+An example of this command is:
+<p>
+</p><dl><dd>&gt; logfile /disk/howard/leapTrpSolvate.log<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.47">matchVariables</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = matchVariables  string</code>
+<dl><dd>LIST	variable<br>
+STRING	string<br>
+
+</dd></dl>The matchVariables command is used to 
+create a LIST of variables with 
+names that match string. The argument 
+string can contain the 
+wildcard characters "?" and "*" to match a specific 
+character or multiple characters, respectively.
+<p>
+</p><dl><dd>&gt; cTerminal = matchVariables C???<br>
+&gt; desc cTerminal<br>
+List size=24<br>
+CALA: CARG: CASN: CASP: CCYS: CCYX: CGLN:<br>
+CGLU: CGLY: CHID: CHIE: CHIP: <br>
+CHIS: CILE: CLEU: CLYS: CMET: CPHE: CPRO:<br>
+CSER: CTHR: CTRP: CTYR: CVAL: <br>
+--End of list<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.48">measureGeom</a></h3>
+
+<p></p><dl><dt></dt><dd><code>measureGeom atom1 atom2 [ atom3 [ atom4 ] ]</code>
+<dl><dd>ATOM	atom1<br>
+ATOM	atom2<br>
+ATOM	atom3<br>
+ATOM	atom4<br>
+
+</dd></dl>Measure the distance, angle, or torsion between 
+two, three, or four ATOMs, respectively.
+<p>
+In the following example, we first describe 
+the RESIDUE ALA of the ALA
+UNIT in order to find the identity of the ATOMs.  
+Next, the measureGeom command is used to determine a 
+distance, simple angle, and a dihedral angle.  
+As shown in the example, the ATOMs may be identified 
+using atom names or numbers.
+</p><p>
+</p><dl><dd>&gt; desc ALA.ALA <br>
+RESIDUE name: ALA <br>
+RESIDUE sequence number: 1 <br>
+Type: protein <br>
+Connection atoms: <br>
+Connect atom 0: A<n 1=""> <br>
+Connect atom 1: A<c 9=""> <br>
+Contents:  <br>
+A<n 1=""> <br>
+A<hn 2=""> <br>
+A<ca 3=""> <br>
+A<ha 4=""> <br>
+A<cb 5=""> <br>
+A<hb1 6=""> <br>
+A<hb2 7=""> <br>
+A<hb3 8=""> <br>
+A<c 9=""> <br>
+A<o 10=""> <br>
+&gt; measureGeom ALA.ALA.1 ALA.ALA.3 <br>
+Distance: 1.45 angstroms <br>
+&gt; measureGeom ALA.ALA.1 ALA.ALA.3 ALA.ALA.5 <br>
+Angle: 111.10 degrees <br>
+&gt; measureGeom ALA.ALA.N ALA.ALA.CA ALA.ALA.C ALA.ALA.O <br>
+Torsion angle: 0.00 degrees<br>
+
+</o></c></hb3></hb2></hb1></cb></ha></ca></hn></n></c></n></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.49">quit</a></h3>
+
+<p></p><dl><dt></dt><dd>Quit the LEAP program.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.50">remove</a></h3>
+
+<p></p><dl><dt></dt><dd><code>remove a b</code>
+<dl><dd>CONT	a<br>
+CONT	b<br>
+
+</dd></dl>Remove the object b from the object a. 
+If b is not contained by a then 
+an error message will be displayed. This command 
+is used to remove ATOMs from RESIDUEs, and 
+RESIDUEs from UNITs. If the object represented 
+by b is not referenced by some variable name 
+then it will be destroyed.
+<p>
+</p><dl><dd>&gt; dipeptide = combine { ALA GLY } <br>
+Sequence: ALA <br>
+Sequence: GLY <br>
+&gt; desc dipeptide <br>
+UNIT name: ALA     !! bug: this should be dipeptide!<br>
+Head atom: .R<ala 1="">.A<n 1=""> <br>
+Tail atom: .R<gly 2="">.A<c 6=""> <br>
+Contents:  <br>
+R<ala 1=""> <br>
+R<gly 2=""> <br>
+&gt; remove dipeptide dipeptide.2 <br>
+&gt; desc dipeptide <br>
+UNIT name: ALA     !! bug: this should be dipeptide!<br>
+Head atom: .R<ala 1="">.A<n 1=""> <br>
+Tail atom: null <br>
+Contents:  <br>
+R<ala 1=""><br>
+
+</ala></n></ala></gly></ala></c></gly></n></ala></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.51">restrainAngle</a></h3>
+
+<p></p><dl><dt></dt><dd><code>restrainAngle unit a b c force angle</code>
+<dl><dd>UNIT	unit<br>
+ATOM	a<br>
+ATOM	b<br>
+ATOM	c<br>
+NUMBER	force<br>
+NUMBER	angle<br>
+
+</dd></dl>Add a restraint angle to unit. A restraint is used to 
+constrain atoms during molecular mechanics calculations.  
+It causes the energy of the unit to increase as the deviation 
+from the restraining internal coordinate increases. The 
+restraint is between atoms a, b, and c. The 
+force constant of the restraint is force 
+(in kcal-mol$^{-1}$-deg$^{-1}$) and the equilibrium angle is angle
+(in degrees).  (see the <i>restrainBond</i> command for an 
+example of this command).
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.52">restrainBond</a></h3>
+
+<p></p><dl><dt></dt><dd><code>restrainBond unit a b force length</code>
+<dl><dd>UNIT	unit<br>
+ATOM	a<br>
+ATOM	b<br>
+NUMBER	force<br>
+NUMBER	length<br>
+
+</dd></dl>Add a restraint bond to unit.  A restraint is used to 
+constrain atoms during molecular mechanics calculations.  It 
+causes the energy of the unit to increase as the deviation from 
+the restraining internal coordinate increases.  The restraint 
+is between atoms a and b and has a force constant 
+of force  (in kcal/mol-�<sup>2</sup>) and an equilibrium distance 
+of length (in �).
+<p>
+</p><dl><dd>&gt; desc GLY <br>
+UNIT name: GLY <br>
+Head atom: .R<gly 1="">.A<n 1=""> <br>
+Tail atom: .R<gly 1="">.A<c 6=""> <br>
+Contents:  <br>
+R<gly 1=""> <br>
+&gt; restrainBond GLY GLY.1.1  GLY.1.7 50 2.8 <br>
+&gt; restrainAngle GLY GLY.1.1 GLY.1.3 GLY.1.6 50 110 <br>
+&gt; restrainTorsion GLY GLY.1.2 GLY.1.1 GLY.1.3 &nbsp;<br>
+&gt; GLY.1.6 50 0 2 <br>
+&gt; desc GLY <br>
+UNIT name: GLY <br>
+Head atom: .R<gly 1="">.A<n 1=""> <br>
+Tail atom: .R<gly 1="">.A<c 6=""> <br>
+Restraint BOND: .R<gly 1="">.A<n 1=""> - .R<gly 1="">.A<o 7="">  <br>
+Kr=50.000000  R0=2.800000 <br>
+Restraint ANGLE: .R<gly 1="">.A<n 1=""> - .R<gly 1="">.A<ca 3=""> -<br>
+
+Restraint TORSION: .R<gly 1="">.A<hn 2=""> - .R<gly 1="">.A<n 1=""> -<br>
+
+Kt=50.000000  T0=0.000000  N=2.000000 <br>
+Contents:  <br>
+R<gly 1=""> <br>
+&gt; removeRestraint GLY GLY.1.2 GLY.1.1 GLY.1.3 GLY.1.6 <br>
+Removing restraint. <br>
+&gt; removeRestraint GLY GLY.1.1 GLY.1.3 GLY.1.6 <br>
+Removing restraint. <br>
+&gt; removeRestraint GLY GLY.1.1  GLY.1.7 <br>
+Removing restraint. <br>
+&gt; desc GLY <br>
+UNIT name: GLY <br>
+Head atom: .R<gly 1="">.A<n 1=""> <br>
+Tail atom: .R<gly 1="">.A<c 6=""> <br>
+Contents:  <br>
+R<gly 1=""><br>
+
+</gly></c></gly></n></gly></gly></n></gly></hn></gly></ca></gly></n></gly></o></gly></n></gly></c></gly></n></gly></gly></c></gly></n></gly></dd></dl><p>
+In the above example, we illustrate several commands for 
+adding and removing restraints to the "lib/all_amino94.lib"
+UNIT GLY.  (Don't try this at home or you might alter 
+the "lib/all_amino94.lib".  In general, we would not suggest 
+modifying any standard libraries, 
+rather, one should create a new UNIT for practice.)
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.53">restrainTorsion</a></h3>
+
+<p></p><dl><dt></dt><dd><code>restrainTorsion unit a b c d force phi multiplicity</code>
+<dl><dd>UNIT	unit<br>
+ATOM	a<br>
+ATOM	b<br>
+ATOM	c<br>
+ATOM	d<br>
+NUMBER	force<br>
+NUMBER	phi<br>
+NUMBER	multiplicity<br>
+
+</dd></dl>Add a restraint torsion to unit.  A restraint is used 
+to constrain atoms during molecular mechanics calculations.  
+It causes the energy of the unit to increase as the deviation 
+from the restraining internal coordinate increases.   
+The restraint is between atoms a, b, 
+c, and d, and has a force constant of <i>force</i> 
+(in kcal/mol-deg<sup>2</sup>), an equilibrium torsion angle of 
+<img src="BoxType_Commands_files/AMBER-eqn_003.gif"> (in degrees), and a periodicity of <i>multiplicity</i> 
+(see the <i>restrainBond</i> command for an example of this 
+command). 
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.54">saveAmberParm</a></h3>
+
+<p></p><dl><dt></dt><dd><code>saveAmberParm unit topologyfilename coordinatefilename</code>
+<dl><dd>UNIT	unit<br>
+STRING	topologyfilename<br>
+STRING	coordinatefilename<br>
+
+</dd></dl>Save the AMBER/SPASMS topology and coordinate 
+files for the UNIT into the files named 
+topologyfilename and coordinatefilename 
+respectively. This command will cause LEAP to 
+search its list of PARMSETs for parameters 
+defining all of the interactions between the ATOMs within
+the UNIT. This command produces topology files 
+and coordinate files that are identical in format to 
+those produced by AMBER PARM and
+can be read into AMBER and SPASMS for calculations. 
+The output of this operation can be used for minimizations, dynamics, 
+and thermodynamic perturbation calculations. 
+<p>
+In the following example, the topology and coordinates 
+from the all_amino94.lib UNIT ALA are generated:
+</p><p>
+</p><dl><dd>&gt; saveamberparm ALA ala.top ala.crd <br>
+Building topology. <br>
+Building atom parameters. <br>
+Building bond parameters. <br>
+Building angle parameters. <br>
+Building proper torsion parameters. <br>
+Building improper torsion parameters. <br>
+Building H-Bond parameters.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.55">saveAmberParmPol</a></h3>
+
+<p></p><dl><dt></dt><dd><code>saveAmberParmPol unit topologyfilename coordinatefilename</code>
+<dl><dd>UNIT	unit<br>
+STRING	topologyfilename<br>
+STRING	coordinatefilename<br>
+
+</dd></dl>Like saveAmberParm, but includes atomic polarizabilities in the topology
+file for use with IPOL=1 in Sander. The polarizabilities are according 
+to atom type, and are defined in the 'mass' section of the <i>parm.dat</i> or 
+<i>frcmod</i> file. Note: charges are normally scaled when polarizabilities are
+used - see scaleCharges for an easy way of doing this.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.56">saveAmberParmPert</a></h3>
+
+<p></p><dl><dt></dt><dd><code>saveAmberParmPert unit topologyfilename coordinatefilename</code>
+<dl><dd>UNIT	unit<br>
+STRING	topologyfilename<br>
+STRING	coordinatefilename<br>
+
+</dd></dl>This command is the same as <i>saveAmberParm</i>, except
+a perturbation topology file is written instead
+of a plain minimization/dynamics one.
+<p>
+Save the AMBER/SPASMS topology and coordinate 
+files for the UNIT into the files named 
+topologyfilename and coordinatefilename 
+respectively.  This command will cause LEAP to 
+search its list of PARMSETs for parameters 
+defining all of the interactions between the 
+ATOMs within the UNIT.  This command produces 
+topology files and coordinate files that are identical 
+in format to those produced by AMBER PARM and 
+can be read into AMBER gibbs and SPASMS for 
+perturbation calculations.  
+</p><p>
+</p><dl><dd>&gt; saveAmberParmPert pert pert.leap.top pert.leap.crd <br>
+Building topology. <br>
+Building atom parameters. <br>
+Building bond parameters. <br>
+Building angle parameters. <br>
+Building proper torsion parameters. <br>
+Building improper torsion parameters. <br>
+Building H-Bond parameters.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.57">saveAmberParmPolPert</a></h3>
+
+<p></p><dl><dt></dt><dd><code>saveAmberParmPolPert unit topologyfilename coordinatefilename</code>
+<dl><dd>UNIT	unit<br>
+STRING	topologyfilename<br>
+STRING	coordinatefilename<br>
+
+</dd></dl>Like saveAmberParmPert, but includes atomic polarizabilities in the topology
+file for use with IPOL=1 in Gibbs. The polarizabilities are according to 
+atom type, and are defined in the 'mass' section of the parm.dat or frcmod 
+file. Note: charges are normally scaled when polarizabilities are used - 
+see scaleCharges for an easy way of doing this.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.58">saveOff</a></h3>
+
+<p></p><dl><dt></dt><dd><code>saveOff object filename</code>
+<dl><dd>object	object<br>
+STRING	filename<br>
+
+</dd></dl>The saveOff command allows the user to save 
+UNITs and PARMSETs to a file named <i>filename</i>. 
+The file is written using the Object File Format 
+(off) and can accommodate an unlimited number of 
+uniquely named objects. The names by which 
+the objects are stored are the variable 
+names specified in the argument of this command. 
+If the file <i>filename</i> already exists then the 
+new objects will be added to the file. 
+If there are objects within the file with 
+the same names as objects being saved then 
+the old objects will be overwritten. The 
+argument object can be a single UNIT, a single 
+PARMSET, or a LIST of mixed UNITs and PARMSETs.
+(See the <i>add</i> command for an example of 
+the <i>saveOff</i> command.)
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.59">savePdb</a></h3>
+
+<p></p><dl><dt></dt><dd><code>savePdb unit filename</code>
+<dl><dd>UNIT	unit<br>
+STRING	filename<br>
+
+</dd></dl>Write UNIT to the file <i>filename</i> as a 
+PDB format file.  In the following 
+example, the PDB file from the "all_amino94.lib" 
+UNIT ALA is generated:
+<p>
+</p><dl><dd>&gt; savepdb ALA ala.pdb<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.60">scaleCharges</a></h3>
+
+<p></p><dl><dt></dt><dd><code>scaleCharges container scale_factor</code>
+<dl><dd>UNIT/RESIDUE/ATOM   container<br>
+NUMBER              scale_factor <br>
+
+</dd></dl>This command scales the charges in the object by _scale_factor_,
+which must be &gt; 0.  It is useful for building systems for use
+with polarizable atoms, e.g.
+<dl><dd>&gt; x = copy solute<br>
+&gt; scaleCharges x 0.8<br>
+&gt; y = copy WATBOX216<br>
+&gt; scalecharges y 0.875<br>
+&gt; solvatebox x y 10<br>
+&gt; saveamberparmpol x x.top x.crd<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.61">select</a></h3>
+
+<p></p><dl><dt></dt><dd><code>select object</code>
+<dl><dd>CONT	object<br>
+
+</dd></dl>Sets the select flag on all ATOMs 
+within object (see the <i>deSelect</i> 
+command).  In the following example, the side 
+chain of the amino acid ALA has been 
+selected.  The center and charge of the selected 
+atoms is compared with those of the entire 
+ALA RESIDUE.  We have also described one 
+of the ATOMs in ALA, ALA.1.5, 
+before and after selection in order that the user 
+could see the output when a select flag is set.
+<p>
+</p><dl><dd>&gt; center ALA <br>
+The center is at: 4.04, 2.80, 0.49 <br>
+&gt; charge ALA <br>
+Total unperturbed charge: 0.00 <br>
+Total perturbed charge:   0.00 <br>
+&gt; desc ALA.1 <br>
+RESIDUE name: ALA <br>
+RESIDUE sequence number: 1 <br>
+Type: protein <br>
+Connection atoms: <br>
+Connect atom 0: A<n 1=""> <br>
+Connect atom 1: A<c 9=""> <br>
+Contents:  <br>
+A<n 1=""> <br>
+A<hn 2=""> <br>
+A<ca 3=""> <br>
+A<ha 4=""> <br>
+A<cb 5=""> <br>
+A<hb1 6=""> <br>
+A<hb2 7=""> <br>
+A<hb3 8=""> <br>
+A<c 9=""> <br>
+A<o 10=""> <br>
+&gt; desc ALA.1.5 <br>
+ATOM <br>
+Name:    CB    <br>
+Type:    CT    <br>
+Charge:  -0.098 <br>
+Element: C     <br>
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 3.576965, 3.653838, 1.232143 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<ala 1="">.A<ca 3=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb1 6=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb2 7=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb3 8=""> by a single bond. <br>
+&gt; select ALA.1.5  <br>
+&gt; select ALA.1.6  <br>
+&gt; select ALA.1.7  <br>
+&gt; select ALA.1.8  <br>
+&gt; desc ALA.1.5 <br>
+ATOM <br>
+Name:    CB    <br>
+Type:    CT    <br>
+Charge:  -0.098 <br>
+Element: C     <br>
+Atom flags: 20001|posfxd- posblt- posdrn- sel+ pert-<br>
+notdisp- tchd- posknwn+ int- nmin- nbld-  <br>
+Atom position: 3.576965, 3.653838, 1.232143 <br>
+Atom velocity: 0.000000, 0.000000, 0.000000 <br>
+  Bonded to .R<ala 1="">.A<ca 3=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb1 6=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb2 7=""> by a single bond. <br>
+  Bonded to .R<ala 1="">.A<hb3 8=""> by a single bond. <br>
+&gt; groupSelectedAtoms ALA sideChain <br>
+Added 4 atoms. <br>
+&gt; center ALA@sideChain <br>
+The center is at: 3.51, 3.80, 1.45 <br>
+&gt; charge ALA@sideChain <br>
+Total unperturbed charge: 0.02 <br>
+Total perturbed charge:   0.02<br>
+
+</hb3></ala></hb2></ala></hb1></ala></ca></ala></hb3></ala></hb2></ala></hb1></ala></ca></ala></o></c></hb3></hb2></hb1></cb></ha></ca></hn></n></c></n></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.62">sequence</a></h3>
+
+<p></p><dl><dt></dt><dd><code>variable = sequence  list</code>
+<dl><dd>UNIT	variable<br>
+LIST	list<br>
+
+</dd></dl>The sequence command is used to create 
+a new UNIT by combining the contents of a 
+LIST of UNITs. The first argument is a LIST 
+of UNITs. A new UNIT is constructed by taking 
+each UNIT in the sequence in turn 
+and copying its contents into the UNIT being 
+constructed. As each new UNIT is copied, 
+a bond is created between the tail ATOM of 
+the UNIT being constructed and the head 
+ATOM of the UNIT being copied, if both connect 
+ATOMs are defined. If only one is defined, a
+warning is generated and no bond is created. 
+If neither connection ATOM is defined then no 
+bond is created. As each RESIDUE is copied 
+into the UNIT being constructed it is assigned a 
+sequence number which represents the order the 
+RESIDUEs are added. Sequence numbers 
+are assigned to the RESIDUEs so as to maintain 
+the same order as was in the UNIT before it was 
+copied into the UNIT being constructed. 
+This command builds reasonable starting coordinates 
+for all ATOMs within the UNIT; it does this by 
+assigning internal coordinates to the linkages 
+between the RESIDUEs and building the external 
+coordinates from the internal coordinates from the 
+linkages and the internal coordinates 
+that were defined for the individual UNITs in 
+the sequence.
+<p>
+</p><dl><dd>&gt; tripeptide = sequence { ALA GLY PRO } <br>
+Sequence: ALA <br>
+Sequence: GLY <br>
+Joining ALA - GLY <br>
+Sequence: PRO <br>
+Joining GLY - PRO <br>
+&gt; desc tripeptide <br>
+UNIT name: ALA     !! bug: this should be tripeptide!<br>
+Head atom: .R<ala 1="">.A<n 1=""> <br>
+Tail atom: .R<pro 3="">.A<c 13=""> <br>
+Contents:  <br>
+R<ala 1=""> <br>
+R<gly 2=""> <br>
+R<pro 3=""><br>
+
+</pro></gly></ala></c></pro></n></ala></dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.63">set</a></h3>
+
+<p></p><dl><dt></dt><dd><code>set container parameter object</code>
+<dl><dd>CONT	container<br>
+STRING	parameter<br>
+object	object<br>
+
+</dd></dl>This command sets various parameters associated 
+with container.  Please see the "Concepts"  
+section for an extended discussion of the UNIT, 
+RESIDUE, and ATOM parameters 
+that may be altered for each type 
+of object. (See the <i>add</i> command for an 
+example of the <i>set</i> command.)  The following
+parameters can be set within LEAP:
+</dd></dl><p><i>For ATOMs:</i>
+</p><p>
+</p><p></p><dl><dt>name</dt><dd>
+<br>
+A unique STRING descriptor used to 
+identify ATOMs.
+</dd><dt>type</dt><dd>
+<br>
+This is a STRING property that 
+defines the AMBER force field
+atom type.
+</dd><dt>charge</dt><dd>
+<br>
+The charge property is a NUMBER that represents 
+the ATOM's electrostatic point charge to be 
+used in a molecular mechanics force field.
+</dd><dt>position</dt><dd>
+<br>
+This property is a LIST of NUMBERS 
+containing three values: the (X, Y, Z) 
+Cartesian coordinates of the ATOM.
+</dd><dt>pertName</dt><dd>
+<br>
+The STRING is a unique identifier for an ATOM 
+in its final state 
+during a Free Energy Perturbation calculation.
+</dd><dt>pertType</dt><dd>
+<br>
+The STRING is the AMBER force field atom type
+of a perturbed ATOM. 
+</dd><dt>pertCharge</dt><dd>
+<br>
+This  NUMBER represents the final
+electrostatic point charge on an ATOM
+during a Free Energy Perturbation.
+</dd></dl><p><i>For RESIDUEs:</i>
+</p><p>
+</p><p></p><dl><dt>connect0</dt><dd>
+<br>
+This defines an ATOM that
+is used in making links to other RESIDUEs.  
+In UNITs containing single RESIDUEs, the 
+RESIDUEsS  connect0 ATOM is usually defined as the 
+UNIT's head ATOM. 
+</dd><dt>connect1</dt><dd>
+<br>
+This is an ATOM property which defines an ATOM that
+is used in making links to other RESIDUEs. 
+In UNITs containing single RESIDUEs, the 
+RESIDUEsS connect1 ATOM is usually defined as the 
+UNIT's tail ATOM. 
+</dd><dt>connect2</dt><dd>
+<br>
+This is an ATOM property which defines an ATOM that
+can be used in making links to other RESIDUEs.  In amino acids,
+the convention is that this is the ATOM to which 
+disulphide bridges are made.
+</dd><dt>connect3</dt><dd>
+<br>
+This is an ATOM property which defines an ATOM that
+can be used in making links to other RESIDUEs.
+</dd><dt>connect4</dt><dd>
+<br>
+This is an ATOM property which defines an ATOM that
+can be used in making links to other RESIDUEs.
+</dd><dt>connect5</dt><dd>
+<br>
+This is an ATOM property which defines an ATOM that
+can be used in making links to other RESIDUEs.
+</dd><dt>restype</dt><dd>
+<br>
+This property is a STRING that represents the type of
+the RESIDUE.  Currently, it can have one of the following
+values: "undefined", "solvent", "protein",
+"nucleic", or "saccharide".
+</dd><dt>name</dt><dd>
+<br>
+This STRING property is the RESIDUE name.
+</dd></dl><p><i>For UNITs:</i>
+</p><p>
+</p><p></p><dl><dt>head</dt><dd>
+<br>
+Defines the ATOM within
+the UNIT that is connected when 
+UNITs are joined together:
+the tail ATOM of one UNIT is connected 
+to the head ATOM of the
+subsequent UNIT in any sequence.
+</dd><dt>tail</dt><dd>
+<br>
+Defines the ATOM within
+the UNIT that is connected when 
+UNITs are joined together:
+the tail ATOM of one UNIT is connected 
+to the head ATOM of the
+subsequent UNIT in any sequence.
+</dd><dt>box</dt><dd>
+<br>
+The property defines the bounding box of the UNIT.  If
+it is defined as null then no bounding box is defined.
+If the value is a single NUMBER then the bounding box
+will be defined to be a cube with each side being NUMBER of
+angstroms across.  If the value is a LIST then it must be
+a LIST containing three numbers, the lengths of the three
+sides of the bounding box.
+</dd><dt>cap</dt><dd>
+<br>
+The property defines the solvent cap of the UNIT.  If
+it is defined as null then no solvent cap is defined.
+If the value is a LIST then it must contain four numbers,
+the first three define the Cartesian coordinates 
+(X, Y, Z) of the origin of
+the solvent cap in angstroms, 
+the fourth NUMBER defines the radius of the solvent cap
+in angstroms.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.64">setBox</a></h3>
+
+<p></p><dl><dt></dt><dd><code>setBox unit  [ buffer OR buffer_xyz_list ]</code>
+<dl><dd>UNIT	unit<br>
+
+</dd></dl>The setBox command adds a periodic box to the UNIT, turning it
+into a periodic system for the simulation programs.  It does not add any
+solvent to the system, but otherwise works the same way as the
+solvateBox command.  See that command for a description of the buffer
+variable, which determines how far away the box boundaries are from
+the atoms of the unit.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.65">solvateBox</a></h3>
+
+<p></p><dl><dt></dt><dd><code>solvateBox solute solvent buffer [ iso ] [ closeness ]</code>
+<dl><dd>UNIT	solute<br>
+UNIT	solvent<br>
+object	buffer<br>
+NUMBER	closeness<br>
+
+</dd></dl>The <i>solvateBox</i> command creates a solvent box 
+around the solute UNIT. The solute UNIT is modified 
+by the addition of solvent RESIDUEs. 
+<p>
+The user may want to first align long solutes that are not expected
+to tumble using alignAxes, in order to minimize box volume.
+</p><p>
+The normal choice for a TIP3 _solvent_ UNIT is WATBOX216. Note that
+constant pressure equilibration is required to bring the artificial box
+to reasonable density, since Van der Waals voids remain due to the
+impossibility of natural packing of solvent around the solute and at
+the edges of the box.
+</p><p>
+The solvent UNIT is copied and repeated in all three spatial 
+directions to create a box containing the entire solute 
+and a buffer zone defined by the buffer argument. The buffer 
+argument defines the distance, in angstroms, between 
+the wall of the box and the closest ATOM in the solute. 
+If the buffer argument is a single NUMBER, then the buffer distance is
+the same for the x, y, and z directions, unless the 'iso' option is used
+to make the box cubic, with the shortest box clearance = buffer.
+If the buffer argument is a LIST of three NUMBERS, then the NUMBERs are
+applied to the x, y, and z axes respectively. As the larger box is created
+and superimposed on the solute, solvent molecules overlapping the solute
+are removed.
+</p><p>
+The optional closeness parameter can be used to control how 
+close, in angstroms, solvent ATOMs can come to solute ATOMs. 
+The default value of the closeness argument is 1.0. Smaller 
+values allow solvent ATOMs to come closer to solute ATOMs. 
+The criterion for rejection of overlapping solvent RESIDUEs 
+is if the distance between any solvent ATOM to the closest 
+solute ATOM is less than the sum of the ATOMs VANDERWAAL 
+distances multiplied by the closeness argument.
+</p><p>
+This command modifies the _solute_ UNIT in several ways.  First, the
+coordinates of the ATOMs are modified to move the center of a box
+enclosing the Van der Waals radii of the atoms to the origin.  Secondly,
+the UNIT is modified by the addition of _solvent_ RESIDUEs copied from
+the _solvent_ UNIT. Finally, the box parameter of the new system (still
+named for the _solute_) is modified to reflect the fact that a periodic,
+rectilinear solvent box has been created around it.
+</p><p>
+In this example, it is assumed that the file water.lib, containing
+WATBOX216, has been loaded already (as is done by the default leaprc):
+</p><p>
+</p><dl><dd>&gt;&gt; mol = loadpdb my.pdb<br>
+&gt;&gt; solvateBox sol WATBOX216 10<br>
+  Solute vdw bounding box:              7.512 12.339 12.066<br>
+  Total bounding box for atom centers:  27.512 32.339 32.066<br>
+  Solvent unit box:                     18.774 18.774 18.774<br>
+  Total vdw box size:                   30.995 35.538 35.416 angstroms.<br>
+  Total mass 14470.768 amu,  Density 0.616 g/cc<br>
+  Added 785 residues.<br>
+
+</dd></dl><p>
+Again, note that the density of 0.601 g/cc points to the need for
+constant pressure equilibration. (See the discussion of equilibration
+in the Q&amp;A section of the amber web.)
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.66">solvateCap</a></h3>
+
+<p></p><dl><dt></dt><dd><code>solvateCap solute solvent position radius [ closeness ]</code>
+<dl><dd>UNIT	solute<br>
+UNIT	solvent<br>
+object	position<br>
+NUMBER	radius<br>
+NUMBER	closeness<br>
+
+</dd></dl>The solvateCap command creates a solvent cap around the solute UNIT. 
+The solute UNIT is modified by the addition of solvent RESIDUEs. 
+The solvent box will be repeated in all three spatial directions 
+to create a large solvent sphere with a radius of radius angstroms. 
+<p>
+The position argument defines where the center of the solvent 
+cap is to be placed. If position is a UNIT, RESIDUE, ATOM, or
+a LIST of UNITs, RESIDUEs, or ATOMs, then the geometric center of 
+the ATOMs within the object will be used as the center of the solvent 
+cap sphere. If position is a LIST containing three NUMBERS,
+then the position argument will be treated as a vector that defines 
+the position of the solvent cap sphere center.
+</p><p>
+The optional closeness parameter can be used to control how close,
+in angstroms, solvent ATOMs can come to solute ATOMs. The default 
+value of the closeness argument is 1.0. Smaller values allow solvent 
+ATOMs to come closer to solute ATOMs. The criterion for rejection of 
+overlapping solvent RESIDUEs is if the distance between any solvent 
+ATOM to the closest solute ATOM is less than the sum of the ATOMs 
+VANDERWAAL's distances multiplied by the closeness argument.
+</p><p>
+This command modifies the solute UNIT 
+in several ways. First, the UNIT is modified 
+by the addition of solvent RESIDUEs copied 
+from the solvent UNIT. Secondly, the cap 
+parameter of the UNIT solute is modified 
+to reflect the fact that a solvent cap has 
+been created around the solute.
+</p><p>
+</p><dl><dd>&gt;&gt; mol = loadpdb my.pdb<br>
+&gt;&gt; solvateCap mol WATBOX216 mol.2.CA 8.0 2.0 <br>
+Added 3 residues.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.67">solvateDontClip</a></h3>
+
+<p></p><dl><dt></dt><dd><code>solvateDontClip solute solvent buffer [ closeness ]</code>
+<dl><dd>UNIT	solute<br>
+UNIT	solvent<br>
+object	buffer<br>
+NUMBER	closeness<br>
+
+</dd></dl>This command is identical to the <i>solvateBox</i> 
+command except that the solvent box that is 
+created is not clipped to the boundary of the 
+buffer region. This command forms larger solvent 
+boxes than does <i>solvateBox</i> 
+because it does not cause solvent that is outside 
+the buffer region to be discarded. 
+This helps to preserve the periodic structure 
+of properly constructed solvent boxes, preventing 
+hot-spots from forming.
+<p>
+</p><dl><dd>&gt;&gt; mol = loadpdb my.pdb<br>
+&gt;&gt; solvateDontClip mol WATBOX216 10<br>
+  Solute vdw bounding box:              7.512 12.339 12.066<br>
+  Total bounding box for atom centers:  27.512 32.339 32.066<br>
+  Solvent unit box:                     18.774 18.774 18.774<br>
+  Total vdw box size:                   41.120 40.899 41.075 angstroms.<br>
+  Total mass 30595.088 amu,  Density 0.735 g/cc<br>
+  Added 1680 residues.<br>
+
+</dd></dl><p>
+Note the larger number of waters added, compared to solvateBox;
+in the case of this solute and choice of buffer, the overall box 
+size is increased by about 10 angstroms in each direction.
+</p><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.68">solvateOct</a></h3>
+
+<p></p><dl><dt></dt><dd><code>solvateOct solute solvent buffer [iso] [ closeness ]</code>
+<dl><dd>UNIT                         _solute_<br>
+UNIT                         _solvent_<br>
+object                       _buffer_<br>
+NUMBER                       _closeness_<br>
+
+</dd></dl>The solvateOct command is the same as solvateBox, except the corners
+of the box are sliced off, resulting in a truncated octahedron, which
+typically gives a more uniform distribution of solvent around the
+solute.
+In solvateOct, when a LIST is given for the buffer argument, four
+numbers are given instead of three, where the fourth is the diagonal
+clearance. If 0.0 is given as the fourth number, the diagonal clearance
+resulting from the application of the x,y,z clearances is reported. If
+a non-0 value is given, this may require scaling up the other clearances,
+which is also reported.
+If the 'iso' option is used, the isometric truncated octahedron is
+rotated to an orientation used by the <i>sander</i> PME code.
+<p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.69">solvateShell</a></h3>
+
+<p></p><dl><dt></dt><dd><code>solvateShell solute solvent thickness [ closeness ]</code>
+<dl><dd>UNIT	solute<br>
+UNIT	solvent<br>
+NUMBER	thickness<br>
+NUMBER	closeness<br>
+
+</dd></dl>The <i>solvateShell</i> command adds a solvent shell to the solute 
+UNIT. The resulting solute/solvent UNIT will be irregular in shape 
+since it will reflect the contours of the solute. The solute UNIT 
+is modified by the addition of solvent RESIDUEs. The solvent box will 
+be repeated in three directions to create a large solvent 
+box that can contain the entire solute and a shell thickness
+angstroms thick. The solvent RESIDUEs are then added to the solute 
+UNIT if they lie within the shell defined by thickness and do not 
+overlap with the solute ATOMs. The optional closeness parameter can 
+be used to control how close solvent ATOMs can come to solute 
+ATOMs. The default value of the closeness argument is 1.0. 
+Please see the <i>solvateBox</i> command for more 
+details on the closeness parameter.
+<p>
+</p><dl><dd>&gt;&gt; mol = loadpdb my.pdb<br>
+&gt;&gt; solvateShell mol WATBOX216 8.0<br>
+  Solute vdw bounding box:              7.512 12.339 12.066<br>
+  Total bounding box for atom centers:  23.512 28.339 28.066<br>
+  Solvent unit box:                     18.774 18.774 18.774<br>
+  Added 147 residues.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.70">source</a></h3>
+
+<p></p><dl><dt></dt><dd><code>source filename</code>
+<dl><dd>STRING	filename<br>
+
+</dd></dl>This command executes commands within a text file. 
+To display the commands as they are read, see 
+the <i>verbosity</i> command.   The text within 
+the source file is formatted exactly like
+the text the user types into LEAP.
+If a file named "paths.cmd" contains the following lines:
+<p>
+</p><dl><dd>addPath /disk/howard/LeapTests <br>
+addPath /disk/howard/LeapTests/Cholesterol <br>
+addPath /disk/howard/LeapTests/Ethane <br>
+addPath /disk/howard/LeapTests/Solvents <br>
+addPath /disk/howard/LeapTests/Trp<br>
+
+</dd></dl><p>
+"source"ing it will produce the output listing shown below.
+</p><p>
+</p><dl><dd>&gt; source paths.x<br>
+&gt;&gt; addPath /disk/howard/LeapTests<br>
+/disk/howard/LeapTests added to file search path.<br>
+&gt;&gt; addPath /disk/howard/LeapTests/Cholesterol<br>
+/disk/howard/LeapTests/Cholesterol added to file search path.<br>
+&gt;&gt; addPath /disk/howard/LeapTests/Ethane<br>
+/disk/howard/LeapTests/Ethane added to file search path.<br>
+&gt;&gt; addPath /disk/howard/LeapTests/Solvents<br>
+/disk/howard/LeapTests/Solvents added to file search path.<br>
+&gt;&gt; addPath /disk/howard/LeapTests/Trp<br>
+/disk/howard/LeapTests/Trp added to file search path.<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.71">transform</a></h3>
+
+<p></p><dl><dt></dt><dd><code>transform atoms, matrix</code>
+<dl><dd>CONT	atoms<br>
+LIST	matrix<br>
+
+</dd></dl>Transform all of the ATOMs within 
+atoms by the ( 3 <img src="BoxType_Commands_files/AMBER-eqn.gif"> 3 ) 
+or ( 4 <img src="BoxType_Commands_files/AMBER-eqn_002.gif"> 4 ) matrix represented by the 
+nine or sixteen NUMBERS in the LIST 
+of LISTs <i>matrix</i>.  
+The general matrix looks like:
+<p>
+</p><dl><dd>r11	r12	r13	-tx<br>
+r21	r22	r23	-ty<br>
+r31	r32	r33	-tz<br>
+0	0	0  	1  <br>
+
+</dd></dl><p>
+The matrix elements 
+represent the intended symmetry 
+operation.  For example, a reflection 
+in the (x, y) plane would be produced 
+by the matrix:
+</p><p>
+</p><dl><dd>1	0	 0<br>
+0	1	 0<br>
+0	0	-1 <br>
+
+</dd></dl><p>
+This reflection could be combined with a 
+six angstrom translation along the x-axis 
+by using the following matrix.
+</p><p>
+</p><dl><dd>1	0	 0	6<br>
+0	1	 0	0<br>
+0	0	-1	0<br>
+0	0	 0	1 <br>
+
+</dd></dl><p>
+In the following example, wrB is transformed 
+by an inversion operation:
+</p><p>
+</p><dl><dd>transform wrpB {<br>
+ { -1  0  0  }<br>
+ {  0 -1  0  }<br>
+ {  0  0 -1  }<br>
+ }<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.72">translate</a></h3>
+
+<p></p><dl><dt></dt><dd><code>translate atoms direction</code>
+<dl><dd>CONT	atoms<br>
+LIST	direction<br>
+
+</dd></dl>Translate all of the ATOMs within atoms 
+by the vector defined by the three NUMBERS 
+in the LIST <i>direction</i>.
+<p>
+Example:
+</p><dl><dd>translate wrpB { 0  0 -24.53333 }<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.73">verbosity</a></h3>
+
+<p></p><dl><dt></dt><dd><code>verbosity level</code>
+<dl><dd>NUMBER	level<br>
+
+</dd></dl>This command sets the level of output that 
+LEAP provides the user. A value of 0 
+is the default, providing the minimum of 
+messages. A value of 1 will produce 
+more output, and a value of 2 will produce all 
+of the output of level 1 and display the 
+text of the script lines executed 
+with the <i>source</i> command.
+The following line is an example of this command:
+<p>
+</p><dl><dd>&gt; verbosity 2<br>
+Verbosity level: 2<br>
+
+</dd></dl><p>
+</p><p></p></dd></dl><h3><a name="sh-5.9.74">zMatrix</a></h3>
+
+<p></p><dl><dt></dt><dd><code>zMatrix object zmatrix</code>
+<dl><dd>CONT	object<br>
+LIST	matrix<br>
+
+</dd></dl>The <i>zMatrix</i> command is quite complicated. 
+It is used to define the external coordinates 
+of ATOMs within object using internal coordinates. 
+The second parameter of the <i>zMatrix</i> command 
+is a LIST of LISTs; each sub-list has several arguments:
+<p>
+</p><dl><dd>{ a1 a2 bond12 }<br>
+
+</dd></dl><p>
+This entry defines the coordinate of a1
+by placing it bond12 angstroms 
+along the x-axis from ATOM a2. 
+If ATOM a2 does not have coordinates 
+defined then ATOM a2 is placed at the origin.
+</p><p>
+</p><dl><dd>{ a1 a2 a3 bond12 angle123 }<br>
+
+</dd></dl><p>
+This entry defines the coordinate of a1 
+by placing it bond12 angstroms away 
+from ATOM a2 making an angle of 
+angle123 degrees between a1, a2 
+and a3. The angle is measured in a right 
+hand sense and in the x-y plane. 
+ATOMs a2 and a3 
+must have coordinates defined.
+</p><p>
+</p><dl><dd>{ a1 a2 a3 a4 bond12 angle123 torsion1234 }<br>
+
+</dd></dl><p>
+This entry defines the coordinate of a1 
+by placing it bond12 angstroms 
+away from ATOM a2, creating an 
+angle of angle123 degrees between a1, 
+a2, and a3, and making a torsion 
+angle of torsion1234 between a1, 
+a2, a3, and a4.
+</p><p>
+</p><dl><dd>{ a1 a2 a3 a4 bond12 angle123 angle124 orientation }<br>
+
+</dd></dl><p>
+This entry defines the coordinate of a1 by 
+placing it bond12 angstroms away from ATOM 
+a2, making angles angle123 between 
+ATOMs a1, a2, and a3, and 
+angle124 between ATOMs a1, a2, and 
+a4. The argument orientation defines 
+whether the ATOM a1 is 
+above or below a plane defined by the 
+ATOMs a2, a3, and a4. If 
+orientation is positive then a1 
+will be placed in such a way so that the 
+inner product of (a3-a2) cross 
+(a4-a2) with (a1-a2) is 
+positive. Otherwise a1 will be placed on 
+the other side of the plane. This allows the 
+coordinates of a molecule like fluoro-chloro-bromo-methane 
+to be defined without having to resort to dummy atoms.
+</p><p>
+The first arguments within the <i>zMatrix</i> 
+entries ( a1, a2, a3, a4 ) 
+are either ATOMs or STRINGS containing 
+names of ATOMs within object. 
+The subsequent arguments are all NUMBERS. 
+Any ATOM can be placed at the a1 position, 
+even those that have coordinates defined. 
+This feature can be used to provide an endless 
+supply of dummy atoms, if they are required. 
+A predefined dummy atom with the name "*" 
+(a single asterisk, no quotes) can also be used.
+</p><p>
+There is no order imposed in the sub-lists. 
+The user can place sub-lists in arbitrary order, 
+as long as they maintain the requirement that 
+all atoms a2, a3, and a4 must 
+have external coordinates defined, except for 
+entries that define the coordinate of an ATOM 
+using only a bond length.
+(See the <i>add</i> command for an example 
+of the <i>zMatrix</i> command.)
+</p></dd></dl><p>&nbsp;
+</p><p>
+</p><p>
+</p><hr> <a href="http://ambermd.org/doc6/html/AMBER.html">[Contents]</a> <a href="http://ambermd.org/doc6/html/AMBER-sh-5.8.html">[Previous]</a> <a href="http://ambermd.org/doc6/html/AMBER-sh-5.10.html">[Next]</a> <br>
+<i>Updated on January 5, 2000.  Comments to case@scripps.edu</i>
+<p>
+
+</p></body></html>

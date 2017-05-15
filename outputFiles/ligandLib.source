@@ -1,0 +1,5 @@
+source leaprc.gaff
+loadamberparams dummy1.frcmod
+dummy1 = loadmol2 C:\Users\Shashank\Documents\dummy1.mol2
+saveoff dummy1 dummy1.lib
+quit

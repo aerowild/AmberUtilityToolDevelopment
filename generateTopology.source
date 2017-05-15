@@ -1,0 +1,11 @@
+source leaprc.gaff
+source leaprc.ff99SB
+source leaprc.gaff
+source leaprc.gaff
+complex=loadpdb H:\Google Drive\Java_programming\My_prog\AmberUtilityToolDevelopment\tmp.pdb
+solvateoct complex TIP3PBOX 10 1.0
+addions complex Cl- 0
+addions complex Na+ 0
+saveamberparm complex complexsolve.prmtop complexsolve.inpcrd
+savepdb complex complexsolve.pdb
+quit

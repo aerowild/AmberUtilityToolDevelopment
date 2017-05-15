@@ -1,0 +1,7 @@
+minimization:
+&cntrl
+maxcyc=3000,
+ncyc=2000,
+ntmin=1,
+drms=0.0001,
+/
