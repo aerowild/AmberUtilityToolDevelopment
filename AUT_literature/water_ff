@@ -1,9 +1,0 @@
-frcmod.chcl3       frcmod.ff99SP          frcmod.protonated_nucleic
-frcmod.constph     frcmod.ionsff99_tip3p  frcmod.qspcfw
-frcmod.dc4         frcmod.ionsjc_spce     frcmod.spce
-frcmod.ff02pol.r1  frcmod.ionsjc_tip3p    frcmod.spcfw
-frcmod.ff03        frcmod.ionsjc_tip4pew  frcmod.tip3pf
-frcmod.ff03ua      frcmod.meoh            frcmod.tip4p
-frcmod.ff12SB      frcmod.nma             frcmod.tip4pew
-frcmod.ff99SB      frcmod.parmbsc0        frcmod.tip5p
-frcmod.ff99SBildn  frcmod.parmCHI_YIL     frcmod.urea
